@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
-import CardBack from "../resources/SpaceDust.jpg";
-import CardFront from "../resources/CardImage.jpg";
-
-import { wait } from "@testing-library/user-event/dist/utils";
+import CardBack from "../resources/sparkler.webp";
 
 interface CategoryProps {
     questions: string[];
@@ -63,36 +60,36 @@ const CategoryPanel: React.FC<CategoryProps> = ({ questions, randomArr }) => {
             <div className="flex justify-evenly mb-4">
                 <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped1}>
                     <div className="card" onClick={flipCard1}>
-                        <div className="border-4 border-blue-400  grid place-items-center w-60 h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
+                        <div className="border-4 border-black  grid place-items-center w-60 h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
                             <p className='text-white font-semibold text-center'>{questions[question1]}</p>
                         </div>
                     </div>
                     <div className="card card-back" onClick={flipCard1}>
-                        <div className="flex w-60 h-40  bg-blue-400 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
+                        <div className="flex w-60 h-40  bg-black p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
                             <img src={CardBack}></img>
                         </div>
                     </div>
                 </ReactCardFlip>
                 <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped2}>
                     <div className="card" onClick={flipCard2}>
-                        <div className="border-4 border-blue-400  grid place-items-center w-60 h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
+                        <div className="border-4 border-black  grid place-items-center w-60 h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
                             <p className='text-white font-semibold text-center'>{questions[question2]}</p>
                         </div>
                     </div>
                     <div className="card card-back" onClick={flipCard2}>
-                        <div className="flex w-60 h-40 bg-blue-400 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
+                        <div className="flex w-60 h-40 bg-black p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
                             <img src={CardBack}></img>
                         </div>
                     </div>
                 </ReactCardFlip>
                 <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped3}>
                     <div className="card" onClick={flipCard3}>
-                        <div className="border-4 border-blue-400 grid place-items-center w-60 h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
+                        <div className="border-4 border-black grid place-items-center w-60 h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
                             <p className='text-center font-semibold text-white'>{questions[question3]}</p>
                         </div>
                     </div>
                     <div className="card card-back" onClick={flipCard3}>
-                        <div className="flex w-60 h-40  bg-blue-400 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
+                        <div className="flex w-60 h-40  bg-black p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
                             <img src={CardBack}></img>
                         </div>
                     </div>

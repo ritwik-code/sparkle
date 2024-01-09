@@ -3,7 +3,10 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {fontFamily: {
+      customFont: ['"Ink Free"', "sans-serif"],
+      // Add more custom font families as needed
+    },},
   },
   plugins: [],
 }

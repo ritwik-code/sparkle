@@ -1,41 +1,25 @@
-import React from 'react';
-import heart from "../resources/heart.png";
-import frame from "../resources/frame.svg"
-import { ReactComponent as Frame } from "../resources/frame.svg";
+import logo from "../resources/logo.png";
 function Welcome() {
   return (
     <div className='my-4'>
-  
+
       <div className='grid h-screen place-items-center'>
 
-        <div className='w-1/2'>
+        <div className='w-3/4'>
           <div>
-            <h1 className='font-outline-2 font-bold text-5xl text-white text-center'>Sparkle</h1>
+            <img style={{ display: 'block', marginRight:'auto', marginLeft:'auto' }} className="w-1/3" src={logo}></img>
           </div>
 
-          <div>
-            <h2 className='text-center font-outline-05 font-bold text-3xl text-white'>Embark on a Journey of Connection with Sparkle: Delve into Constellations of Shared Stories, Unearth the Depths, and Build Team Harmony, Guided by the Wisdom of Knowing Each Other.</h2>
+          <div className="mt-5">
+            <h2 className='text-center font-customFont font-outline-05 font-bold text-xl text-white'>Welcome to Sparkle, the card game that invites you and your fellow players to build and deepen interpersonal relationships by inspiring you to share your thoughts, feelings, and experiences. The game is designed to create a safe and trusting environment where you can open up and share your thoughts and feelings, and in doing so, build mutual support and trust among your team members.</h2>
+          </div>
+          <div className="mt-5">
+            <h2 className='text-center font-customFont font-outline-05 font-bold text-xl text-white'>Each card contains a question or statement that encourages you to think about a specific topic and share your thoughts and experiences on it. The questions are formulated in such a way that they help you get to know yourself better while also understanding your team members better.</h2>
           </div>
 
-          <div className='my-4'>
-            <div className='flex justify-evenly'>
-              <h3 className='font-outline-1 font-bold text-4xl text-white'>RULES</h3>
-            </div>
-            <div className='flex'>
-              <div className='w-1/3'>
-                <h4 className='font-outline-05 font-bold text-xl text-white text-center'>The game master shares the screen and reveals cards from two categories, Personal and Hypothetical</h4>
-              </div>
-              <div className='w-1/3'>
-                <h4 className='text-center font-outline-05 font-bold text-xl text-white'>The participant chooses the category and the card number. On revealing the card the participant answers the question</h4>
-              </div>
-              <div className='w-1/3'>
-                <h4 className='text-center font-outline-05 font-bold text-xl text-white'>The game master can choose to allow the player a different question if the question if the player requests for another</h4>
-              </div>
-            </div>
+          <div className="mt-5">
+            <h2 className='text-center font-customFont font-outline-05 font-bold text-xl text-white'>The name Sparkle represents the idea of shining brightly with unique flashes of light, which represent personal experiences. Sharing them with others will enhance this sparkle and help you to see yourself and other team members in a new light. At its core, Sparkle is about building strong, long-lasting relationships and mutual support among team members. We believe that by doing so, you will not only have more fun playing the game, but you will also be better equipped to tackle challenges together and achieve better results.</h2>
           </div>
-        </div>
-        <div className='flex'>
-          <h3 className="font-outline-05 text-ellipsis text-center font-semibold text-white mx-1">Made with</h3> <img className='w-8 h-8' src={heart}></img><h3 className="font-outline-05 text-ellipsis text-center font-semibold text-white mx-1"> at UBS Qatar</h3>
         </div>
       </div>
     </div>

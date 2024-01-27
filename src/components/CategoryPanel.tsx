@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
-import CardBack from "../resources/sparkler.webp";
+import CardBack from "../resources/card.jpg";
 
 interface CategoryProps {
     questions: string[];
@@ -65,8 +65,8 @@ const CategoryPanel: React.FC<CategoryProps> = ({ questions, randomArr }) => {
                         </div>
                     </div>
                     <div className="card card-back" onClick={flipCard1}>
-                        <div className="flex w-60 h-40  bg-black p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
-                            <img src={CardBack}></img>
+                        <div className="flex w-60 h-40  shadow-5xl mb-2" style={{ cursor: 'pointer' }}>
+                            <img className="flex w-60 h-40" src={CardBack}></img>
                         </div>
                     </div>
                 </ReactCardFlip>
@@ -77,8 +77,8 @@ const CategoryPanel: React.FC<CategoryProps> = ({ questions, randomArr }) => {
                         </div>
                     </div>
                     <div className="card card-back" onClick={flipCard2}>
-                        <div className="flex w-60 h-40 bg-black p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
-                            <img src={CardBack}></img>
+                        <div className="flex w-60 h-40  shadow-5xl mb-2" style={{ cursor: 'pointer' }}>
+                            <img className="flex w-60 h-40" src={CardBack}></img>
                         </div>
                     </div>
                 </ReactCardFlip>
@@ -89,8 +89,8 @@ const CategoryPanel: React.FC<CategoryProps> = ({ questions, randomArr }) => {
                         </div>
                     </div>
                     <div className="card card-back" onClick={flipCard3}>
-                        <div className="flex w-60 h-40  bg-black p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
-                            <img src={CardBack}></img>
+                        <div className="flex w-60 h-40  shadow-5xl mb-2" style={{ cursor: 'pointer' }}>
+                            <img className="flex w-60 h-40" src={CardBack}></img>
                         </div>
                     </div>
                 </ReactCardFlip>

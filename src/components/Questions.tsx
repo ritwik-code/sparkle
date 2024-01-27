@@ -1,211 +1,232 @@
 import React from 'react';
 
 
-const QuestionsData: Record<string, string[]> = {
-    Personal: [
-        "What is your favorite childhood memory?",
-        "Describe your dream vacation.",
-        "What is your go-to comfort food?",
-        "If you could have dinner with any historical figure, who would it be?",
-        "What is your proudest accomplishment so far?",
-        "Do you prefer the city or the countryside?",
-        "What is your favorite book and why?",
-        "If you could have any talent in the world, what would it be?",
-        "What is your biggest pet peeve?",
-        "What was the last movie that made you cry?",
-        "If you could meet any fictional character, who would it be?",
-        "What is your favorite season and why?",
-        "Describe a moment that changed your life.",
-        "What is your favorite way to spend a lazy Sunday?",
-        "If you could live in any era of history, when would it be?",
-        "What is your spirit animal?",
-        "What is the most challenging thing you've ever done?",
-        "Do you believe in aliens?",
-        "What is your favorite type of music?",
-        "If you could have any superpower, what would it be?",
-        "What is your favorite hobby?",
-        "If you could have dinner with any celebrity, who would it be?",
-        "What is your favorite movie genre?",
-        "Do you believe in fate?",
-        "If you could instantly master any skill, what would it be?",
-        "What is your favorite childhood TV show?",
-        "What is your guilty pleasure?",
-        "If you could visit any place in the world, where would you go?",
-        "What is the most adventurous thing you've ever done?",
-        "Do you prefer sunrise or sunset?",
-        "If you could time travel, would you go to the past or the future?",
-        "What is your favorite holiday tradition?",
-        "If you could change one thing about yourself, what would it be?",
-        "What is your favorite animal and why?",
-        "If you could have any job for a day, what would it be?",
-        "What is your favorite way to relax?",
-        "If you could have any pet, what would it be?",
-        "What is your favorite quote?",
-        "What is your dream car?",
-        "If you could have dinner with any fictional character, who would it be?",
-        "What is your favorite type of cuisine?",
-        "If you could have any dessert right now, what would it be?",
-        "What is your favorite board game?",
-        "If you could be any movie character, who would you be?",
-        "What is your favorite holiday?",
-        "What is your biggest fear?",
-        "If you could be a professional athlete, what sport would you play?",
-        "What is your favorite way to exercise?",
-        "If you could have any job in the world, what would it be?",
-        "What is your favorite childhood game?",
-        "If you could have any celebrity's wardrobe, whose would it be?",
-        "What is your favorite type of art?",
-        "If you could have any historical artifact, what would it be?",
-        "What is your favorite way to spend a rainy day?",
-        "If you could have any exotic pet, what would it be?",
-        "What is your favorite way to stay active?",
-        "If you could have any animal as a sidekick, what would it be?",
-        "What is your favorite thing about yourself?",
-        "If you could have any job for a day, what would it be?",
-        "What is your favorite type of weather?",
-        "If you could have any historical figure as a mentor, who would it be?",
-        "What is your favorite way to give back to the community?",
-        "If you could have any skill instantly, what would it be?",
-        "What is your favorite family tradition?",
-        "If you could have any piece of technology, what would it be?",
-        "What is your favorite thing about your hometown?",
-        "If you could have any career, what would it be?",
-        "What is your favorite way to celebrate a success?",
-        "If you could have any animal as a pet, what would it be?",
-        "What is your favorite childhood toy?",
-        "If you could have any vehicle, what would it be?",
-        "What is your favorite way to express yourself?",
-        "If you could have any job in the world, what would it be?",
-        "What is your favorite way to relax?",
-        "If you could have any talent, what would it be?",
-        "What is your favorite childhood memory?",
-        "If you could have any superpower, what would it be?",
-        "What is your favorite way to spend a Saturday?",
-        "If you could have any pet, what would it be?",
-        "What is your favorite type of food?",
-        "If you could have any hobby, what would it be?",
-        "What is your favorite way to spend time with friends?",
-        "If you could have any type of clothing, what would it be?",
-        "What is your favorite thing about yourself?",
-        "If you could have any skill, what would it be?",
-        "What is your favorite way to learn new things?",
-        "If you could have any job, what would it be?",
-        "What is your favorite way to spend a Sunday?",
-        "If you could have any talent, what would it be?",
-        "What is your favorite way to spend a day off?",
-        "If you could have any animal as a pet, what would it be?",
-        "What is your favorite way to celebrate a birthday?",
-        "If you could have any skill, what would it be?",
-        "What is your favorite type of food?",
-        "If you could have any job, what would it be?",
-        "What is your favorite way to spend a Sunday?",
-        "If you could have any talent, what would it be?",
-        "What is your favorite way to spend a day off?",
-        "If you could have any animal as a pet, what would it be?",
-        "What is your favorite way to celebrate a birthday?",
+const QuestionsData: Record<string, string[]> =  {
+    BuildRelationships: [
+        "Share a past experience that feels like a warm hug and brings you comfort when you remember it."
+        ,"Question to all: Complete the sentence: In a crowd of people, I am the ….... one."
+        ,"What has Covid 19 taught you?"
+        ,"Why do you think so many of us suffer from loneliness?"
+        ,"What was the first thing you noticed about me?"
+        ,"Question to all: Which music genre matches your personality?"
+        ,"What are the three things that you are grateful for in this moment?"
+        ,"Which was the last book you read, what was it about and what did you take from it?"
+        ,"Complete the sentence: I respond to stress by..."
+        ,"What habit do you need to let go of?"
+        ,"Is it better to be autocratic or servile? Why?"
+        ,"What are you most curious about?"
+        ,"Complete the sentence: I feel relaxed, centered and grounded when…"
+        ,"Share an item that is always in your bag or pocket."
+        ,"What do you always do before getting on a flight?"
+        ,"What is your biggest regret?"
+        ,"What means diversity, equity and inclusion to you?"
+        ,"What are you most proud of?"
+        ,"On a spectrum of introverts and extroverts, where do you lie?"
+        ,"What does spirituality mean to you?"
+        ,"Who is your biggest idol, and why?"
+        ,"Do you tend to put the wants and needs of others first?"
+        ,"Complete the sentence: I would never.."
+        ,"What does culture mean to you?"
+        ,"Do you consider yourself creative? If so, how do you express your creativity?"
+        ,"Are you closer to your mother or father? Why?"
+        ,"What would you like to let go of?"
+        ,"Complete the sentence: The most important trait for me in a partner is..."
+        ,"Rate my communication skills and share any tips for improvement."
+        ,"Have you ever been cheated on?"
+        ,"How do you practice self-care in your day?"
+        ,"Complete the sentence: My first relationship taught me.… My last relationship taught me…."
+        ,"If I were a fruit, what would I be?"
+        ,"How would you define your current relationship with your parents? Did it require work to get it to where it is today?"
+        ,"There are two types of people in this world. Believers and scientists. Which one are you?"
+        ,"Complete the sentence: I would rather kiss a snake than…"
+        ,"Do you find it difficult to trust or commit? Why?"
+        ,"Question to all: What´s your favorite dish?"
+        ,"What are you usually doing at 6 AM? And at 6 PM?"
+        ,"Question to all: Admit something about yourself."
+        ,"What do you think of when you hear the word - independence?"
+        ,"Complete the sentence: I am scared of…"
+        ,"What does it mean for you to be loved?"
+        ,"What´s your aim in life?"
+        ,"What is currently challenging you?"
+        ,"How many times have you ever really loved someone?"
+        ,"What are the most attractive and unattractive qualities in a person?"
+        ,"Question to all: Complete the sentence: Joy to me is…"
+        ,"Do you easily adapt to change?"
+        ,"How would a perfect day look like for you?"
+        ,"What footprint would you like to leave in this world?"
+        ,"Complete the sentence: I have stopped apologizing for my…"
+        ,"Share one of your boundaries."
+        ,"Out of the 5 tastes - bitter, sour, sweet, salty and spicy; which taste do you like most, and which do you avoid?"
+        ,"Complete the sentence: It would be difficult for me to forgive someone who…"
+        ,"Which was your best subject in school and which subject did you struggle with?"
+        ,"How do you want to be as a parent?"
+        ,"Complete the sentence: To me a happy life is one that…"
+        ,"In a relationship, would you be the one to say \"I love you\" first?"
+        ,"Who do you consider to be family to you? Share the story of how they became family."
+        ,"How do you spend your leisure time?"
+        ,"How do you want to be perceived as a work colleague, and how as a friend?"
+        ,"Question to all: Complete the sentence: Right now, I feel..."
+        ,"How would you respond to an insult?"
+        ,"Share one or two things that make you feel psychologically safe at work and why."
+        ,"Complete the sentence: Vulnerability to me is…"
+        ,"Share a funny story from your childhood."
+        ,"Can the need for safety and security coexist with the need for freedom and adventure within a relationship?"
+        ,"Complete the sentence: Something I hope people understand about me is…"
+        ,"What was the best and worst relationship advice you´ve ever got?"
+        ,"Who in your life do you wish you could get to know on a deeper level?"
+        ,"Complete the sentence: I would like to be remembered for my…"
+        ,"Tell us a story of a funny moment in your life."
+        ,"Share two truths and a lie and let the rest figure out which is which."
+        ,"Complete the sentence: My shower song is..."
+        ,"Tell us the story of your name."
+        ,"Share three keys to a successful marriage or relationship."
+        ,"Complete the sentence: I wish my partner…"
+        ,"Describe a moment when you truly felt unconditional love."
+        ,"What is your favorite form of exercise?"
+        ,"Share an instance when you were aware of but ignored red flags in a person."
+        ,"What would you do if you would get 1 million USD?"
+        ,"Complete the sentence: No matter how much I love and appreciate someone, I would never..."
+        ,"Question to all: Which superhero ability would you like to have?"
+        ,"Question to all: What is your favorite movie or series and why?"
+        ,"What do you look for in a line manager?"
+        ,"What life experiences have made you the person you are today?"
+        ,"What does your best possible self look like? What character strengths will you need to get there?"
+        ,"Name three things you´re grateful for."
+        ,"What is your biggest worry and what is in your control to help?"
+        ,"How does inclusion and exclusion feel to you?"
+        ,"Share a situation where you might have noticed your thinking and actions might have been biased."
+        ,"Share a moment when you felt proud of yourself."
+        ,"What are you inspired by and why?"
+        ,"What was your first impression of me?"
+        ,"Question to all: Rate my listening skills and share any tips for improvement."
+        ,"What´s your view on marriage?"
+        ,"Is there anything you´re passionate about that most people might find weird?"
+        ,"What do you dislike that most people love?"
+        ,"What´s your biggest goal for this year?"
+        ,"How was your first date with your current partner?"
+        ,"If your current situation in life would be a (fictional) TV series, what would it be called, and what episode are we in?"
+        ,"What´s the most important lesson a past work experience has taught you that you applied to the current job?"
+        ,"How do you think your job affects your private life?"
+        ,"What is your favorite thing about your job?"
+        ,"Question to all: How would you describe yourself as a friend?"
+        ,"What is your most memorable experience?"
+        ,"What is something you´ve always wanted to try but haven´t yet?"
+        ,"What is something you´re currently working on?"
+        ,"What is your favorite quote or motto?"
+        ,"What is your favorite way to relax and unwind?"
+        ,"What is your favorite thing about the team´s diversity?"
+        ,"If you could have any job in the world, what would it be?"
+        ,"What is the most creative job you´ve ever worked on?"
+        ,"What is the most creative way you´ve used social media?"
+        ,"Can you give an example of a time when you had to navigate a dificult situation with an important stakeholder?"
+        ,"How do you handle difficult stakeholders?"
+        ,"What is your most memorable experience related to diversity and inclusion?"
+        ,"How do you define diversity?"
+        ,"What did this card game teach you about your relationship with the team, and what did it teach you about yourself?"
     ],
-    Hypothetical: [
-        "If you could time travel, would you go to the past or the future?",
-        "If you could have any fictional character's abilities, who would it be?",
-        "If you could be any animal for a day, what would you be?",
-        "If you could live in any fictional world, where would it be?",
-        "If you could have any job in the world for a week, what would it be?",
-        "If you could switch lives with any celebrity for a day, who would it be?",
-        "If you could have any mythical creature as a pet, what would it be?",
-        "If you could have any technology from the future, what would it be?",
-        "If you could have any historical artifact, what would it be?",
-        "If you could have dinner with any historical figure, who would it be?",
-        "If you could have any superpower, but only for a day, what would it be?",
-        "If you could be any character from a book or movie, who would it be?",
-        "If you could visit any fictional world, where would you go?",
-        "If you could have any skill instantly, what would it be?",
-        "If you could have any vehicle, real or fictional, what would it be?",
-        "If you could have any talent in the world, what would it be?",
-        "If you could have any job in a fantasy world, what would it be?",
-        "If you could have any animal as a sidekick, what would it be?",
-        "If you could live in any era of history, when would it be?",
-        "If you could have any pet, real or fictional, what would it be?",
-        "If you could have any object from a movie, what would it be?",
-        "If you could have any technology from a sci-fi movie, what would it be?",
-        "If you could have any mythical creature as a friend, what would it be?",
-        "If you could have any historical figure as a mentor, who would it be?",
-        "If you could have any job in a science fiction universe, what would it be?",
-        "If you could have any type of transportation, what would it be?",
-        "If you could have any power from a video game, what would it be?",
-        "If you could have any skill from a fantasy world, what would it be?",
-        "If you could have any ability from a superhero, what would it be?",
-        "If you could have any job in a fantasy world, what would it be?",
-        "If you could have any talent in the world, what would it be?",
-        "If you could have any fictional character as a best friend, who would it be?",
-        "If you could have any technology from the future, what would it be?",
-        "If you could have any historical artifact, what would it be?",
-        "If you could have dinner with any historical figure, who would it be?",
-        "If you could have any superpower, but only for a day, what would it be?",
-        "If you could be any character from a book or movie, who would it be?",
-        "If you could visit any fictional world, where would you go?",
-        "If you could have any skill instantly, what would it be?",
-        "If you could have any vehicle, real or fictional, what would it be?",
-        "If you could have any talent in the world, what would it be?",
-        "If you could have any job in a fantasy world, what would it be?",
-        "If you could have any animal as a sidekick, what would it be?",
-        "If you could live in any era of history, when would it be?",
-        "If you could have any pet, real or fictional, what would it be?",
-        "If you could have any object from a movie, what would it be?",
-        "If you could have any technology from a sci-fi movie, what would it be?",
-        "If you could have any mythical creature as a friend, what would it be?",
-        "If you could have any historical figure as a mentor, who would it be?",
-        "If you could have any job in a science fiction universe, what would it be?",
-        "If you could have any type of transportation, what would it be?",
-        "If you could have any power from a video game, what would it be?",
-        "If you could have any skill from a fantasy world, what would it be?",
-        "If you could have any ability from a superhero, what would it be?",
-        "If you could have any job in a fantasy world, what would it be?",
-        "If you could have any talent in the world, what would it be?",
-        "If you could have any fictional character as a best friend, who would it be?",
-        "If you could have any technology from the future, what would it be?",
-        "If you could have any historical artifact, what would it be?",
-        "If you could have dinner with any historical figure, who would it be?",
-        "If you could have any superpower, but only for a day, what would it be?",
-        "If you could be any character from a book or movie, who would it be?",
-        "If you could visit any fictional world, where would you go?",
-        "If you could have any skill instantly, what would it be?",
-        "If you could have any vehicle, real or fictional, what would it be?",
-        "If you could have any talent in the world, what would it be?",
-        "If you could have any job in a fantasy world, what would it be?",
-        "If you could have any animal as a sidekick, what would it be?",
-        "If you could live in any era of history, when would it be?",
-        "If you could have any pet, real or fictional, what would it be?",
-        "If you could have any object from a movie, what would it be?",
-        "If you could have any technology from a sci-fi movie, what would it be?",
-        "If you could have any mythical creature as a friend, what would it be?",
-        "If you could have any historical figure as a mentor, who would it be?",
-        "If you could have any job in a science fiction universe, what would it be?",
-        "If you could have any type of transportation, what would it be?",
-        "If you could have any power from a video game, what would it be?",
-        "If you could have any skill from a fantasy world, what would it be?",
-        "If you could have any ability from a superhero, what would it be?",
-        "If you could have any job in a fantasy world, what would it be?",
-        "If you could have any talent in the world, what would it be?",
-        "If you could have any fictional character as a best friend, who would it be?",
-        "If you could have any technology from the future, what would it be?",
-        "If you could have any historical artifact, what would it be?",
-        "If you could have dinner with any historical figure, who would it be?",
-        "If you could have any superpower, but only for a day, what would it be?",
-        "If you could be any character from a book or movie, who would it be?",
-        "If you could visit any fictional world, where would you go?",
-        "If you could have any skill instantly, what would it be?",
-        "If you could have any vehicle, real or fictional, what would it be?",
-        "If you could have any talent in the world, what would it be?",
-        "If you could have any job in a fantasy world, what would it be?",
-        "If you could have any animal as a sidekick, what would it be?",
-        "If you could live in any era of history, when would it be?",
-        "If you could have any pet, real or fictional, what would it be?",
-        "If you could have any object from a movie, what would it be?",
-        "If you could have any technology from a sci-fi movie, what would it be?",
-        "If you could have any mythical creature as a friend, what would it be?",
-        "If you could have any historical figure as a mentor, who would it be?",
-        "If you could have any job in a science fiction universe, what would it be?",
-    ]
+    DeepenRelationships: [
+        "If you were to set me up on a blind date and tell the date about me, what would you say?"
+        ,"How well do you know me: What characteristics do I appreciate in a person?"
+        ,"Share a time when you felt pressured to fit in."
+        ,"When was the last time you lost your temper and what caused it?"
+        ,"What worries you?"
+        ,"Are you satisfied with where you are in your career - why or why not?"
+        ,"Share a moment when you really screwed up."
+        ,"If you had/have children, what would you wish for them to know?"
+        ,"If you had three labels that had been assigned to you, what would they be?"
+        ,"What are you currently going through?"
+        ,"How do you manage your own anger?"
+        ,"Could you forgive your partner if he/she cheated on you?"
+        ,"Question to all: What do you need to fully trust someone?"
+        ,"Question to all: Complete the sentence: I feel seen, heard, and accepted when..."
+        ,"Do your parents truly know you?"
+        ,"Share the story of the last time you cried."
+        ,"Share an instance when you wronged someone. How did the person react and how did you respond?"
+        ,"Do you feel seen and loved within your social circle?"
+        ,"Share the story of the first time you fell in love."
+        ,"Question to all: How would you describe your relationship with food?"
+        ,"Share a memory from your childhood which stands out."
+        ,"Describe a time when your words or actions came back to harm you."
+        ,"Have you ever had a dysfunctional relationship? How did you cope with it?"
+        ,"Share a moment when you received immense kindness."
+        ,"Do you prefer being at the center of attention or diverting attention away from you? Why?"
+        ,"What steps do you think we should take to create a more inclusive team environment?"
+        ,"What is a hard truth or reality that you had to face?"
+        ,"What about your life story should people remember and how should it make them feel?"
+        ,"Define your relationship with me in one word or phrase."
+        ,"What is something you wish you never had to go through?"
+        ,"Share an instance of when you had to be brave."
+        ,"Share an instance when you felt misunderstood."
+        ,"What is the greatest (non-tangible) gift that you have ever received?"
+        ,"What do you tend to ignore in yourself and others?"
+        ,"How was your relationship with your mom, dad and siblings (if any) while growing up?"
+        ,"What is the one thing about yourself that you would like to change?"
+        ,"What (if anything) was missing in your childhood?"
+        ,"Complete the sentence: I wish I could forget the time when I…"
+        ,"Complete the sentence: My needs in a relationship are…"
+        ,"Are you calm & collected or untamed & triggered in a conflict?"
+        ,"Describe a time when you´ve gone against your intuition and regretted it."
+        ,"Are you truly happy?"
+        ,"What keeps you up at night?"
+        ,"Do you tend to compare yourself to others? If so, where does that tendency come from?"
+        ,"Question to all: Complete the sentence: A recurring pattern that I notice in my life is…"
+        ,"Do you feel like you´re not enough?"
+        ,"Are you concerned about the way you come across to other people and the impression you create?"
+        ,"What areas in your life have you neglected and what have been the consequences?"
+        ,"What was passed on to you by your family and how does it affect your life?"
+        ,"Complete the sentence: I can be kinder and more compassionate with others by…"
+        ,"What have you realized is beyond your control?"
+        ,"How and why did your last relationship end?"
+        ,"Complete the sentence: I tend to get emotional when I talk about…"
+        ,"Complete the sentence: A fantasy of mine is…"
+        ,"Share a story of a time when you felt ashamed of something you said or did."
+        ,"Complete the sentence: I am sensitive about…"
+        ,"Complete the sentence: One of my rituals is…"
+        ,"When was the last time you experienced guilt?"
+        ,"When was the last time you felt lonely?"
+        ,"Were you ever made fun of as a child and if so, how has that experience affected you?"
+        ,"What is your experience of grief and how do you manage it?"
+        ,"Share an experience that made you panic and what you did to overcome it."
+        ,"What difficult experience or struggle made you grow?"
+        ,"Complete the sentence: I would never ask for…"
+        ,"What is stopping you from saying what someone means to you?"
+        ,"Have you ever been hurt? How did you heal from that experience?"
+        ,"What parts of you do you struggle to express?"
+        ,"What do you consider a dealbreaker in a friendship or a relationship?"
+        ,"Share a story that always makes you happy."
+        ,"Share a story that you haven´t told anyone in this room before."
+        ,"Question to all: How do you wish to be remembered?"
+        ,"If you could say one sentence to your younger self, what would it be?"
+        ,"If you could change one thing about your childhood, what would it be?"
+        ,"Complete the sentence: I feel vulnerable when…"
+        ,"Have you altered parts of yourself to suit someone else´s expections of you?"
+        ,"What have you not yet forgiven, and how does that make you feel?"
+        ,"Question to all: Complete the sentence: I feel emotionally safe around people when…"
+        ,"What are your physical wounds? And what are your emotional ones?"
+        ,"What have you had to unlearn with age?"
+        ,"What assumption did you make about me that turned out to be false?"
+        ,"On a scale of 1-10, how open do you feel I am with you? Explain."
+        ,"What are you most sensitive to during a disagreement?"
+        ,"What did you learn from your parents´ relationship that you´d like to apply / avoid?"
+        ,"How have you seen me grow so far?"
+        ,"What´s one difference between us that you like?"
+        ,"What´s one similarity between us that you like?"
+        ,"What about your relationship with the current team are you most proud of?"
+        ,"What did this card game teach you about your relationship with the team, and what did it teach you about yourself?"
+        ,"Is there anything you don´t know about me that you wish you did?"
+        ,"What goal would feel best for you to accomplish this year, and how can I support you in that?"
+        ,"What am I most qualified to give advice about?"
+        ,"Is there anyone in the team who helped you become a better person? If yes, how?"
+        ,"What do you think our defining characteristic is as a team?"
+        ,"If we would start a business together, what would it be?"
+        ,"What could other teams learn from us?"
+        ,"What´s a superpower of mine that perhaps I´m unaware of?"
+        ,"Finish the sentence: I´m proudest of you for…"
+        ,"What is your favorite thing about working with this team?"
+        ,"How do you think a team can learn from failures and use them to improve?"
+        ,"What do you think is the most common cause of conflict in a team? How would you solve it?"
+    ],
+    "Q2E":[]
   };
 
 export default QuestionsData;

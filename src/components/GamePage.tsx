@@ -1,6 +1,7 @@
 import React from 'react';
 import questionsData from './Questions';
 import CategoryPanel from './CategoryPanel';
+import About from './About';
 
 const shuffleArray = (array: any[]) => {
     const shuffledArray = [...array];
@@ -29,17 +30,16 @@ const GamePage: React.FC = () => {
                 <div className=''>
                     <h2 className="text-3xl font-customFont font-bold text-center text-black mb-2">Build Relationships</h2>
                     <div className='flex justify-center'>
-                        <CategoryPanel questions={shuffleArray(questionsData["Personal"])} randomArr={generateUniqueRandomNumbers(3, questionsData["Personal"].length - 1)}></CategoryPanel>
+                        <CategoryPanel questions={shuffleArray(questionsData["BuildRelationships"])} randomArr={generateUniqueRandomNumbers(3, questionsData["BuildRelationships"].length - 1)}></CategoryPanel>
                     </div>
                     <h2 className="text-3xl font-customFont font-bold text-center text-black mb-2">Deepen Relationships</h2>
                     <div className='flex justify-center'>
-                        <CategoryPanel questions={shuffleArray(questionsData["Hypothetical"])} randomArr={generateUniqueRandomNumbers(3, questionsData["Hypothetical"].length - 1)}></CategoryPanel>
+                        <CategoryPanel questions={shuffleArray(questionsData["DeepenRelationships"])} randomArr={generateUniqueRandomNumbers(3, questionsData["DeepenRelationships"].length - 1)}></CategoryPanel>
                     </div>
                 </div>
+
             </div>
-            {/* <div className='flex'>
-                <h3 className="font-outline-05 text-ellipsis text-center font-semibold text-white mx-1">Made with</h3> <img className='w-8 h-8' src={heart}></img><h3 className="font-outline-05 text-ellipsis text-center font-semibold text-white mx-1"> at UBS Qatar</h3>
-            </div> */}
+
         </div>
     );
 };

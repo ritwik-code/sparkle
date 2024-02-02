@@ -18,13 +18,13 @@ function Welcome() {
         </div>
 
         <div className="mt-5">
-          <h2 className='text-center font-customFont font-outline-05 font-bold text-3xl text-red-500'>RULES OF THE GAME:</h2>
+          <h2 className='text-center font-customFont font-outline-05 font-bold text-3xl text-red-500'>Rules of the game:</h2>
         </div>
         <div className="mt-5">
-          <h3 className='text-center font-customFont font-outline-05 font-bold text-xl text-red-500'>Choose a card and try to answer the question. Skip as many times as you need if the answer is too personal to share in this moment.</h3>
+          <h3 className='text-center font-customFont font-outline-05 font-bold text-xl text-white'>Choose a card and try to answer the question. Skip as many times as you need if the answer is too personal to share in this moment.</h3>
         </div>
         <div className="mt-5">
-          <h3 className='text-center font-customFont font-outline-05 font-bold text-xl text-red-500'>If you answered the question, turn the card around and let the next player pick one (every time you turn a card around, a new question will be selected from set of 220 carefully crafted questions).</h3>
+          <h3 className='text-center font-customFont font-outline-05 font-bold text-xl text-white'>If you answered the question, turn the card around and let the next player pick one (every time you turn a card around, a new question will be selected from set of 220 carefully crafted questions).</h3>
         </div>
       </div>
     </div>

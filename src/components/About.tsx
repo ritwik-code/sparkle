@@ -16,7 +16,7 @@ function About() {
           <div className="mt-5">
             <h2 className='text-center font-customFont font-outline-05 font-bold text-xl text-white'>Let us kindle the fire and Sparkle!</h2>
           </div>
-          <div className="mt-5">
+          <div className="mt-5 pb-16">
             <h2 className='text-center font-customFont font-outline-05 font-bold text-xl text-white'>Stefano Cheri & Ritwik Mishra</h2>
           </div>
         </div>

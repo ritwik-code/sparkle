@@ -1,7 +1,7 @@
 function About() {
   return (
 
-      <div className='grid place-items-center'>
+      <div className='grid h-screen place-items-center'>
 
         <div className='w-3/4'>
         <div className="mt-5">

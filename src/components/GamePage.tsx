@@ -1,7 +1,6 @@
 import React from 'react';
 import questionsData from './Questions';
 import CategoryPanel from './CategoryPanel';
-import About from './About';
 
 const shuffleArray = (array: any[]) => {
     const shuffledArray = [...array];

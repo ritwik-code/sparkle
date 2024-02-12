@@ -3,7 +3,7 @@ function Welcome() {
   return (
     // <div className='my-4'>
 
-    <div className='grid h-screen place-items-center'>
+    <div className='grid h-auto place-items-center'>
       <div className='w-3/4'>
         <div>
           <img style={{ display: 'block', marginRight: 'auto', marginLeft: 'auto' }} className="w-1/3" src={logo}></img>

@@ -18,10 +18,16 @@ function Welcome() {
         </div>
 
         <div className="mt-5">
-          <h2 className='text-center font-customFont font-outline-05 font-bold text-3xl text-red-500'>Rules of the game:</h2>
+          <h2 className='text-center font-customFont font-outline-05 font-bold text-3xl text-red-500'>:Ground Rules:</h2>
         </div>
         <div className="mt-5">
-          <h3 className='text-center font-customFont font-outline-05 font-bold text-xl text-white'>Choose a card and try to answer the question. Skip as many times as you need if the answer is too personal to share in this moment.</h3>
+          <h3 className='text-center font-customFont font-outline-05 font-bold text-xl text-white'>To ensure a trustful environment, answers may not leave this (virtual) room.</h3>
+        </div>
+        <div className="mt-5">
+          <h3 className='text-center font-customFont font-outline-05 font-bold text-xl text-white'>No written answers, no recording.</h3>
+        </div>
+        <div className="mt-5">
+          <h3 className='text-center font-customFont font-outline-05 font-bold text-xl text-white'>If you picked a question and you feel uncomfortable to answer it, skip as many times as you need.</h3>
         </div>
         <div className="mt-5">
           <h3 className='text-center font-customFont font-outline-05 font-bold text-xl text-white'>If you answered the question, turn the card around and let the next player pick one (every time you turn a card around, a new question will be selected from set of 220 carefully crafted questions).</h3>

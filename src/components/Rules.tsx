@@ -1,7 +1,7 @@
 
 function Rules() {
     return (
-        <div>
+        <div className="place-items-center">
             <div className="mt-5">
                 <h2 className='text-center font-customFont font-outline-05 font-bold text-4xl'>GROUND RULES</h2>
             </div>

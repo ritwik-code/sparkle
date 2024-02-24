@@ -14,9 +14,8 @@
         -webkit-text-stroke: 1px black;
       }
   }
-@layer base {
-    @font-face {
-      font-family: Ink Free;
-      src: url(./font/Inkfree.ttf) format("ttf");
-    }
+@layer base {}
+@font-face {
+  font-family: Ink Free;
+  src: url(../public/font/Inkfree.ttf) format("ttf");
 }

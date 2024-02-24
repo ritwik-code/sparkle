@@ -57,7 +57,7 @@ const CategoryPanel: React.FC<CategoryProps> = ({ questions, randomArr }) => {
     }
     return (
         <div className="card w-3/4">
-            <div className="flex flex-col md:flex-row justify-evenly mb-4">
+            <div className="flex flex-col sm:flex-row justify-evenly mb-4">
                 <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped1}>
                     <div className="card" onClick={flipCard1}>
                         <div className="border-4 border-black  grid place-items-center w-40 h-28 lg:w-60 lg:h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>

@@ -56,41 +56,41 @@ const CategoryPanel: React.FC<CategoryProps> = ({ questions, randomArr }) => {
         }
     }
     return (
-        <div className="card w-3/4 ">
-            <div className="flex justify-evenly mb-4">
+        <div className="card w-3/4">
+            <div className="flex flex-col md:flex-row justify-evenly mb-4">
                 <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped1}>
                     <div className="card" onClick={flipCard1}>
-                        <div className="border-4 border-black  grid place-items-center w-60 h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
-                            <p className='text-white font-semibold text-center'>{questions[question1]}</p>
+                        <div className="border-4 border-black  grid place-items-center w-40 h-28 lg:w-60 lg:h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
+                            <p className='text-white text-xs lg:text-lg font-semibold text-center'>{questions[question1]}</p>
                         </div>
                     </div>
                     <div className="card card-back" onClick={flipCard1}>
-                        <div className="flex w-60 h-40  shadow-5xl mb-2" style={{ cursor: 'pointer' }}>
-                            <img className="flex w-60 h-40" src={CardBack}></img>
+                        <div className="flex w-40 h-28 lg:w-60 lg:h-40  shadow-5xl mb-2 " style={{ cursor: 'pointer' }}>
+                            <img className="flex w-40 h-28 lg:w-60 lg:h-40" src={CardBack}></img>
                         </div>
                     </div>
                 </ReactCardFlip>
                 <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped2}>
                     <div className="card" onClick={flipCard2}>
-                        <div className="border-4 border-black  grid place-items-center w-60 h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
-                            <p className='text-white font-semibold text-center'>{questions[question2]}</p>
+                        <div className="border-4 border-black  grid place-items-center w-40 h-28 lg:w-60 lg:h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
+                            <p className='text-white text-xs lg:text-lg font-semibold text-center'>{questions[question2]}</p>
                         </div>
                     </div>
                     <div className="card card-back" onClick={flipCard2}>
-                        <div className="flex w-60 h-40  shadow-5xl mb-2" style={{ cursor: 'pointer' }}>
-                            <img className="flex w-60 h-40" src={CardBack}></img>
+                        <div className="flex w-40 h-28 lg:w-60 lg:h-40  shadow-5xl mb-2" style={{ cursor: 'pointer' }}>
+                            <img className="flex w-40 h-28 lg:w-60 lg:h-40" src={CardBack}></img>
                         </div>
                     </div>
                 </ReactCardFlip>
                 <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped3}>
                     <div className="card" onClick={flipCard3}>
-                        <div className="border-4 border-black grid place-items-center w-60 h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
-                            <p className='text-center font-semibold text-white'>{questions[question3]}</p>
+                        <div className="border-4 border-black grid place-items-center w-40 h-28 lg:w-60 lg:h-40  bg-black/90 p-1 rounded shadow-2xl mb-2" style={{ cursor: 'pointer' }}>
+                            <p className='text-center text-xs lg:text-lg font-semibold text-white'>{questions[question3]}</p>
                         </div>
                     </div>
                     <div className="card card-back" onClick={flipCard3}>
-                        <div className="flex w-60 h-40  shadow-5xl mb-2" style={{ cursor: 'pointer' }}>
-                            <img className="flex w-60 h-40" src={CardBack}></img>
+                        <div className="flex w-40 h-28 lg:w-60 lg:h-40 shadow-5xl mb-2" style={{ cursor: 'pointer' }}>
+                            <img className="flex w-40 h-28 lg:w-60 lg:h-40" src={CardBack}></img>
                         </div>
                     </div>
                 </ReactCardFlip>

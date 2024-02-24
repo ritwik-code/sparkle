@@ -24,21 +24,26 @@ function generateUniqueRandomNumbers(n: number, l: number): number[] {
 const GamePage: React.FC = () => {
 
     return (
-        <div className='grid h-screen place-items-center'>
-            <div className="container mx-auto my-8">
-                <div className=''>
-                    <h2 className="text-3xl font-customFont font-bold text-center text-black mb-2">Build Relationships</h2>
-                    <div className='flex justify-center'>
-                        <CategoryPanel questions={shuffleArray(questionsData["BuildRelationships"])} randomArr={generateUniqueRandomNumbers(3, questionsData["BuildRelationships"].length - 1)}></CategoryPanel>
+        <div className='py-28 sm:py-32'>
+            <div className='grid h-auto place-items-center'>
+                <div className="container my-8 mx-auto">
+                    <div className='max-sm:flex justify-around'>
+                        <div className='mx-1'>
+                            <h2 className="text-2xl md:text-3xl lg:text-4xl font-customFont font-bold text-center text-black mb-2">Build Relationships</h2>
+                            <div className='flex justify-center'>
+                                <CategoryPanel questions={shuffleArray(questionsData["BuildRelationships"])} randomArr={generateUniqueRandomNumbers(3, questionsData["BuildRelationships"].length - 1)}></CategoryPanel>
+                            </div>
+                        </div>
+                        <div className='mx-1'>
+                            <h2 className="text-2xl md:text-3xl lg:text-4xl font-customFont font-bold text-center text-black mb-2">Deepen Relationships</h2>
+                            <div className='flex justify-center'>
+                                <CategoryPanel questions={shuffleArray(questionsData["DeepenRelationships"])} randomArr={generateUniqueRandomNumbers(3, questionsData["DeepenRelationships"].length - 1)}></CategoryPanel>
+                            </div>
+                        </div>
                     </div>
-                    <h2 className="text-3xl font-customFont font-bold text-center text-black mb-2">Deepen Relationships</h2>
-                    <div className='flex justify-center'>
-                        <CategoryPanel questions={shuffleArray(questionsData["DeepenRelationships"])} randomArr={generateUniqueRandomNumbers(3, questionsData["DeepenRelationships"].length - 1)}></CategoryPanel>
-                    </div>
+
                 </div>
-
             </div>
-
         </div>
     );
 };

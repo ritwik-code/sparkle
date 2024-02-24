@@ -227,9 +227,7 @@ const QuestionsData: Record<string, string[]> =  {
         ,"What triggers you the most during a verbal confrontation?"
         ,"What did you learn from your parents´ relationship that you would like to apply or avoid?"
         ,"Is there anything you don´t know about me but would like to know?"
-        ,"What did this card game teach you about your relationship with the team, and what did it teach you about yourself?"
-    ],
-    "Q2E":[]
+        ,"What did this card game teach you about your relationship with the team, and what did it teach you about yourself?"]
   };
 
 export default QuestionsData;

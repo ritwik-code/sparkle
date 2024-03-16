@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 const QuestionsData: Record<string, string[]> =  {
     BuildRelationships: [
         "Share a past experience that brings you joy when you remember it."

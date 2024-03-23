@@ -1,7 +1,6 @@
 import './App.css';
 import GamePage from './components/GamePage';
 import Welcome from './components/Welcome';
-import Rules from "./components/Rules";
 import logo from "./resources/logo.png";
 import Modal from './components/modal/modal';
 import About from './components/About';
@@ -25,7 +24,8 @@ function App() {
       </div>
       <GamePage />
       {showWelcome && <Modal handleClose={closeWelcome} component={Welcome()}/>}
-      <Button style={{ marginRight: 'auto', marginLeft: 'auto' }} onClick={openAbout}>About</Button>
+      <Button style={{ marginRight: 'auto', marginLeft: 'auto' }} onClick={openAbout}>About</Button> 
+      {/* todo add centering */}
       {showAbout && <Modal handleClose={closeAbout} component={About()}/>}
     </div >
   );

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MouseEventHandler } from "react";
+import 'intro.js/introjs.css';
 
 
 const Backdrop = ({ children, onClick}:{children:React.ReactNode, onClick:MouseEventHandler<HTMLDivElement>}) =>{

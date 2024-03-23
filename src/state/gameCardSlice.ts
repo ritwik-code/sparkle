@@ -6,11 +6,13 @@ class GameCard {
     question2: number;
     question3: number;
     flip: boolean[];
+    areRulesVisible: boolean;
 
     constructor(q: number[]) {
         this.question1 = q[0];
         this.question2 = q[1];
         this.question3 = q[2];
+        this.areRulesVisible = false;
         this.flip = [true, true, true];
     }
 }
@@ -37,11 +39,23 @@ const buildGameCardSlice = createSlice({
     initialState,
     reducers: {
         flipCard: (state, actions) => {
-            return{
+            return {
                 ...state,
-                flip:actions.payload
+                flip: actions.payload
             }
-         },
+        },
+        showRules: (state) => {
+            return {
+                ...state,
+                areRulesVisible: true
+            }
+        },
+        hideRules: (state) => {
+            return {
+                ...state,
+                areRulesVisible: false
+            }
+        },
         generateQuestion1: (state) => {
             return {
                 ...state,
@@ -73,5 +87,5 @@ function generateNewQuestionId(card1: number, card2: number, card3: number) {
     return randomNumber;
 }
 
-export const { flipCard, generateQuestion1, generateQuestion2, generateQuestion3 } = buildGameCardSlice.actions;
+export const { flipCard, showRules, hideRules, generateQuestion1, generateQuestion2, generateQuestion3 } = buildGameCardSlice.actions;
 export default buildGameCardSlice.reducer;

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import QuestionsData from "../components/Questions";
 
 class GameCard {
     question1: number;
@@ -13,6 +14,7 @@ class GameCard {
         this.flip = [true, true, true];
     }
 }
+
 const initialState: GameCard = new GameCard(generateUniqueRandomNumbers(3, 110));
 
 

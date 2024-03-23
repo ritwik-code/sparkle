@@ -7,7 +7,7 @@ import CategoryPanel from './CategoryPanel';
 const GamePage: React.FC = () => {
 
     return (
-        <div className='py-28 sm:py-32'>
+        <div className='md:py-10 sm:py-32'>
             <div className='grid h-auto place-items-center'>
                 <div className="container my-8 mx-auto">
                     <div className='max-sm:flex justify-around'>

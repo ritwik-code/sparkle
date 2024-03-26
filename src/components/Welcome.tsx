@@ -1,5 +1,3 @@
-import logo from "../resources/logo.png";
-
 function Welcome() {
   return (
 

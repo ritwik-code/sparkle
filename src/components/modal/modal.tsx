@@ -12,15 +12,15 @@ const Modal = ({ handleClose, component }: { handleClose: MouseEventHandler, com
     return (<Backdrop onClick={handleClose}>
         <motion.div
             onClick={(e) => e.stopPropagation()}
-            className="m-auto flex items-center flex-col"
+            className="m-auto grid h-auto place-items-center pt-5 xl:w-3/4 sm:w-full bg-white"
             variants={dropIn}
         >
-            <div className='grid h-auto place-items-center pt-5 xl:w-3/4 sm:w-full bg-white'>
+            {/* <div className='grid h-auto place-items-center pt-5 xl:w-3/4 sm:w-full bg-white'> */}
                 {<button onClick={handleClose}>
                     Close
                 </button>}
                 {component}
-            </div>
+            {/* </div> */}
         </motion.div>
     </Backdrop>)
 }

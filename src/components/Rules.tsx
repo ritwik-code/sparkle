@@ -1,8 +1,8 @@
 
 function Rules() {
     return (
-        <div className="grid h-auto place-items-center">
-            <div className="w-3/4">
+        <div className="grid h-auto place-items-center mt-5 pb-16">
+            <div className="w-3/4 ">
                 <h2 className='text-center font-customFont font-outline-05 font-bold text-2xl md:text-3xl lg:text-4xl'>GROUND RULES</h2>
                 <ul className="list-disc list-inside mt-5">
                     <li className='text-center font-outline-05 font-semi-bold md:text-xl xl:text-2xl'>To ensure a trustful environment,

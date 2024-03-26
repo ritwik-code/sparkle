@@ -6,22 +6,21 @@ import Modal from './components/modal/modal';
 import About from './components/About';
 import { useState } from 'react';
 import { Button } from '@mui/material';
-import { showRules } from './state/gameCardSlice';
-import { useDispatch } from 'react-redux';
+import Rules from './components/Rules';
 
 function App() {
 
   const [showAbout, toggleShowAbout] = useState(false);
   const [showWelcome, toggleShowWelcome] = useState(true);
-  const dispatch = useDispatch();
+
+  const [showRules, toggleShowRules] = useState(false);
+
 
   const openAbout = () => { toggleShowAbout(true) }
   const closeAbout = () => { toggleShowAbout(false) }
-  const closeWelcome = () => {
-    toggleShowWelcome(false);
-    dispatch(showRules())
-  }
-
+  const closeWelcome = () => { toggleShowWelcome(false) }
+  const openRules = () => { toggleShowRules(true) }
+  const closeRules = () => { toggleShowRules(false) }
   return (
     <div >
       <div>
@@ -30,9 +29,15 @@ function App() {
       <GamePage />
       {showWelcome && <Modal handleClose={closeWelcome} component={Welcome()} />}
       <div className='grid place-items-center'>
-        <Button onClick={openAbout}>About</Button>
+        <div className='flex '>
+          <Button onClick={openAbout}>About</Button>
+          <Button onClick={openRules}>Rules</Button>
+        </div>
       </div>
       {showAbout && <Modal handleClose={closeAbout} component={About()} />}
+      {showRules && <Modal handleClose={closeRules} component={Rules()} />}
+
+
     </div >
   );
 }

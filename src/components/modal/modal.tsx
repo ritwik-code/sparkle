@@ -9,10 +9,12 @@ const dropIn = {
 }
 
 const Modal = ({ handleClose, component }: { handleClose: MouseEventHandler, component: React.ReactNode }) => {
-    return (<Backdrop onClick={handleClose}>
+    return (
+    <div className="">
+    <Backdrop onClick={handleClose}>
         <motion.div
             onClick={(e) => e.stopPropagation()}
-            className="m-auto grid h-auto place-items-center pt-5 xl:w-3/4 sm:w-full bg-white"
+            className="m-auto grid h-auto place-items-center pt-5 xl:w-3/4 sm:w-full bg-white bg-fixed"
             variants={dropIn}
         >
             {/* <div className='grid h-auto place-items-center pt-5 xl:w-3/4 sm:w-full bg-white'> */}
@@ -22,7 +24,9 @@ const Modal = ({ handleClose, component }: { handleClose: MouseEventHandler, com
                 {component}
             {/* </div> */}
         </motion.div>
-    </Backdrop>)
+    </Backdrop>
+     </div>
+    )
 }
 
 export default Modal;

@@ -19,11 +19,8 @@ function About() {
                     <h2 className='text-center font-outline-05 font-semi-bold md:text-xl xl:text-2xl'> At its core, Sparkle is about building strong, long-lasting relationships and mutual support.
                         We believe that by playing the game, you will not only have a good time with your colleagues, but you will also be better equipped to tackle challenges together and achieve better results. </h2>
                 </div>
-                <div className="mt-5">
-                    <h2 className='text-center font-outline-05 font-semi-bold md:text-xl xl:text-2xl'>Let us kindle the fire and Sparkle!</h2>
-                </div>
                 <div className="mt-5 pb-16">
-                    <h2 className='text-center font-outline-05 font-semi-bold md:text-xl xl:text-2xl'>Stefano Cheri & Ritwik Mishra</h2>
+                    <h2 className='text-center font-outline-05 font-semi-bold md:text-xl xl:text-2xl'>Let us kindle the fire and Sparkle!</h2>
                 </div>
             </div>
         </div>

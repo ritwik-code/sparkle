@@ -6,7 +6,6 @@ import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSli
 import SpaceBG from "../resources/SpageBGAll.jpg";
 const ParticlesBg: React.FC = () => {
     const particlesInit = useCallback(async (engine: Engine) => {
-        console.log(engine);
         await loadSlim(engine);
     }, []);
 

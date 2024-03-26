@@ -24,13 +24,11 @@ const initialState: GameCard = new GameCard(generateUniqueRandomNumbers(3, 110))
 //Init array
 //on true to false -> update state by generating new random number
 function generateUniqueRandomNumbers(n: number, l: number): number[] {
-    console.log("here");
     const randomNumbers: Set<number> = new Set();
     while (randomNumbers.size < n) {
         const randomNumber = Math.floor(Math.random() * (l + 1));
         randomNumbers.add(randomNumber);
     }
-    console.log(Array.from(randomNumbers));
     return Array.from(randomNumbers);
 }
 

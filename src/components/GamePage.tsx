@@ -18,7 +18,6 @@ function generateUniqueRandomNumbers(n: number, l: number): number[] {
         const randomNumber = Math.floor(Math.random() * (l + 1));
         randomNumbers.add(randomNumber);
     }
-    console.log(Array.from(randomNumbers));
     return Array.from(randomNumbers);
 }
 

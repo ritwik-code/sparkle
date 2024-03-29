@@ -5,7 +5,7 @@ import logo from "./resources/logo.png";
 import Modal from './components/modal/modal';
 import About from './components/About';
 import { useState } from 'react';
-import { Button } from '@mui/material';
+import { Button, ButtonGroup } from '@mui/material';
 import Rules from './components/Rules';
 
 function App() {
@@ -26,14 +26,18 @@ function App() {
       <div>
         <img style={{ marginRight: 'auto', marginLeft: 'auto' }} alt='logo' className="w-2/3 md:w-1/3 lg:1/4 xl:w-1/5 2xl:1/6" src={logo}></img>
       </div>
+      
+      <p className='text-center md:text-xl xl:text-2xl'>The card game that builds and deepens interpersonal relationships</p>
+      
+      <div className='p-5 grid place-items-center'>
+          <ButtonGroup>
+            <Button onClick={openRules}>Rules</Button>
+            <p></p>
+            <Button onClick={openAbout}>About</Button>
+          </ButtonGroup>
+      </div>
       <GamePage />
       {showWelcome && <Modal handleClose={closeWelcome} component={Welcome()} />}
-      <div className='grid place-items-center'>
-        <div className='flex '>
-          <Button onClick={openAbout}>About</Button>
-          <Button onClick={openRules}>Rules</Button>
-        </div>
-      </div>
       {showAbout && <Modal handleClose={closeAbout} component={About()} />}
       {showRules && <Modal handleClose={closeRules} component={Rules()} />}
 

@@ -23,18 +23,17 @@ function App() {
   const closeRules = () => { toggleShowRules(false) }
   return (
     <div >
-      <div>
-        <img style={{ marginRight: 'auto', marginLeft: 'auto' }} alt='logo' className="w-2/3 md:w-1/3 lg:1/4 xl:w-1/5 2xl:1/6" src={logo}></img>
-      </div>
-      
+        <div className='w-10/12 mr-auto ml-auto'>
+          <img  alt='logo' className="mr-auto ml-auto w-2/3 md:w-1/3 lg:1/4 xl:w-1/5 2xl:1/6" src={logo}></img>
+        </div>
       <p className='text-center md:text-xl xl:text-2xl'>The card game that builds and deepens interpersonal relationships</p>
-      
+
       <div className='p-5 grid place-items-center'>
-          <ButtonGroup>
-            <Button onClick={openRules}>Rules</Button>
-            <p></p>
-            <Button onClick={openAbout}>About</Button>
-          </ButtonGroup>
+        <ButtonGroup>
+          <Button color='inherit' onClick={openRules}>Rules</Button>
+          <p></p>
+          <Button color='inherit' onClick={openAbout}>About</Button>
+        </ButtonGroup>
       </div>
       <GamePage />
       {showWelcome && <Modal handleClose={closeWelcome} component={Welcome()} />}

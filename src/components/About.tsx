@@ -22,6 +22,9 @@ function About() {
                 <div className="mt-5 pb-16">
                     <h2 className='text-center font-outline-05 font-semi-bold md:text-xl xl:text-2xl'>Let us kindle the fire and Sparkle!</h2>
                 </div>
+                <div className="pb-16">
+                    <h2 className='text-center font-outline-05 font-semi-bold md:text-xl xl:text-2xl'>Stefano Cheri and Ritwik Mishra</h2>
+                </div>
             </div>
         </div>
     );

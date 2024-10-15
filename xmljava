@@ -1,0 +1,78 @@
+ublic class XMLFormatter {
+
+    public static String prettifyXML(String unformattedXml) {
+        // Normalize the input by removing extra whitespace between tags
+        unformattedXml = unformattedXml.trim().replaceAll(">\\s+<", "><");
+
+        StringBuilder formattedXml = new StringBuilder();
+        int indentLevel = 0; // Keeps track of the current indentation level
+        boolean inTag = false; // Indicates whether we are inside a tag
+
+        // Loop through each character in the XML string
+        for (int i = 0; i < unformattedXml.length(); i++) {
+            char currentChar = unformattedXml.charAt(i);
+
+            // Handle the start of a tag ('<')
+            if (currentChar == '<') {
+                // If not the first tag, add a newline and indentation before opening a new tag
+                if (!inTag) {
+                    formattedXml.append("\n").append(getIndentation(indentLevel));
+                }
+                inTag = true; // We are now inside a tag
+
+                // If it's a closing tag (e.g., </tag>), decrease the indentation level first
+                if (unformattedXml.charAt(i + 1) == '/') {
+                    indentLevel--; // Decrease the indentation level before printing the closing tag
+                    formattedXml.append("\n").append(getIndentation(indentLevel));
+                }
+
+                // Append the opening angle bracket '<' to the result
+                formattedXml.append(currentChar);
+            }
+            // Handle the end of a tag ('>')
+            else if (currentChar == '>') {
+                inTag = false; // We are now outside the tag
+                formattedXml.append(currentChar); // Append the closing angle bracket '>'
+
+                // Increase the indentation level for the next line if the tag is not self-closing or a closing tag
+                if (i > 0 && unformattedXml.charAt(i - 1) != '/' && unformattedXml.charAt(i - 1) != '?'
+                        && unformattedXml.charAt(i - 1) != '-') {
+                    indentLevel++;
+                }
+            }
+            // Handle content between tags (text content)
+            else {
+                // If not inside a tag and encountering non-whitespace text content
+                if (!inTag && !Character.isWhitespace(currentChar)) {
+                    formattedXml.append("\n").append(getIndentation(indentLevel)); // Add indentation
+                    inTag = true; // Mark that we are inside a block of text content
+                }
+                formattedXml.append(currentChar); // Append the text content or tag attribute
+            }
+        }
+
+        // Return the prettified XML as a string, removing leading and trailing whitespace
+        return formattedXml.toString().trim();
+    }
+
+    /**
+     * Helper method to generate the indentation string based on the current indentation level.
+     * Each level corresponds to a certain number of spaces.
+     * 
+     * @param level The current level of indentation
+     * @return A string representing the indentation for the given level
+     */
+    private static String getIndentation(int level) {
+        StringBuilder indentation = new StringBuilder();
+        for (int i = 0; i < level; i++) {
+            indentation.append("    "); // Use 4 spaces for each indentation level
+        }
+        return indentation.toString();
+    }
+
+    public static void main(String[] args) {
+        String unformattedXml = "<root><child1><subchild>value</subchild></child1><child2>text</child2></root>";
+        String formattedXml = prettifyXML(unformattedXml);
+        System.out.println(formattedXml);
+    }
+}

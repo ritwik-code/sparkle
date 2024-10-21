@@ -76,3 +76,94 @@ ublic class XMLFormatter {
         System.out.println(formattedXml);
     }
 }
+
+
+-----
+public class XMLFormatter {
+
+    public static String prettifyXML(String unformattedXml) {
+        // Normalize the input by removing extra whitespace between tags
+        unformattedXml = unformattedXml.trim().replaceAll(">\\s+<", "><");
+
+        StringBuilder formattedXml = new StringBuilder();
+        int indentLevel = 0; // Keeps track of the current indentation level
+        boolean inTag = false; // Indicates whether we are inside a tag
+        boolean insideTextContent = false; // Indicates if we are inside text content between tags
+
+        // Loop through each character in the XML string
+        for (int i = 0; i < unformattedXml.length(); i++) {
+            char currentChar = unformattedXml.charAt(i);
+
+            // Handle the start of a tag ('<')
+            if (currentChar == '<' && !insideTextContent) {
+                // If not the first tag, add a newline and indentation before opening a new tag
+                if (!inTag) {
+                    formattedXml.append("\n").append(getIndentation(indentLevel));
+                }
+                inTag = true; // We are now inside a tag
+
+                // If it's a closing tag (e.g., </tag>), decrease the indentation level first
+                if (unformattedXml.charAt(i + 1) == '/') {
+                    indentLevel--; // Decrease the indentation level before printing the closing tag
+                    formattedXml.append("\n").append(getIndentation(indentLevel));
+                }
+
+                // Append the opening angle bracket '<' to the result
+                formattedXml.append(currentChar);
+            }
+            // Handle the end of a tag ('>')
+            else if (currentChar == '>') {
+                inTag = false; // We are now outside the tag
+                formattedXml.append(currentChar); // Append the closing angle bracket '>'
+
+                // Increase the indentation level for the next line if the tag is not self-closing or a closing tag
+                if (i > 0 && unformattedXml.charAt(i - 1) != '/' && unformattedXml.charAt(i - 1) != '?'
+                        && unformattedXml.charAt(i - 1) != '-') {
+                    indentLevel++;
+                }
+
+                // Mark the beginning of text content (between tags)
+                if (i + 1 < unformattedXml.length() && unformattedXml.charAt(i + 1) != '<') {
+                    insideTextContent = true;
+                }
+            }
+            // Handle content between tags (text content that might include '<' or '>')
+            else {
+                // If we encounter another opening tag, stop considering it as text content
+                if (currentChar == '<') {
+                    insideTextContent = false;
+                    i--; // Reprocess this character in the next loop iteration as it's the start of a new tag
+                    continue;
+                }
+
+                // If inside text content, just append directly without adding indentation
+                formattedXml.append(currentChar);
+            }
+        }
+
+        // Return the prettified XML as a string, removing leading and trailing whitespace
+        return formattedXml.toString().trim();
+    }
+
+    /**
+     * Helper method to generate the indentation string based on the current indentation level.
+     * Each level corresponds to a certain number of spaces.
+     * 
+     * @param level The current level of indentation
+     * @return A string representing the indentation for the given level
+     */
+    private static String getIndentation(int level) {
+        StringBuilder indentation = new StringBuilder();
+        for (int i = 0; i < level; i++) {
+            indentation.append("    "); // Use 4 spaces for each indentation level
+        }
+        return indentation.toString();
+    }
+
+    public static void main(String[] args) {
+        // Test case with unformatted XML that includes < and > characters inside text content
+        String unformattedXml = "<root><child1><subchild>value with < and > inside</subchild></child1><child2>text</child2></root>";
+        String formattedXml = prettifyXML(unformattedXml);
+        System.out.println(formattedXml);
+    }
+}

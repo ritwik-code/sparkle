@@ -1,0 +1,103 @@
+package com.oauth2.springsecuritypoc.controller;
+
+public class XmlFormatter {
+    public static String formatXml(String input) {
+        StringBuilder result = new StringBuilder(); // To store the formatted XML output
+        int indentLevel = 0; // To manage indentation levels
+        boolean inTag = false; // Flag to indicate if we are currently inside a tag
+        boolean closingTag = false; // Flag to indicate if the current tag is a closing tag
+        boolean insideTagWithContent = false; // Flag to check if the tag has content
+
+        // Loop through each character in the input string
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i); // Get the current character
+
+            if (c == '<') {
+                // If we are not already inside a tag and there's content in result, add a newline
+                if (!inTag && !insideTagWithContent && result.length() > 0 && result.charAt(result.length() - 1) != '\n') {
+                    result.append("\n");
+                }
+                inTag = true; // We are now inside a tag
+                // Check if it’s a closing tag (starts with </)
+                if (i + 1 < input.length() && input.charAt(i + 1) == '/') {
+                    closingTag = true; // Set closingTag flag to true
+                    if(indentLevel>0)
+                    indentLevel--; // Decrease the indentation level for the closing tag
+                    if(!insideTagWithContent){result.append("    ".repeat(indentLevel));}
+                }
+                // Add indentation for opening tags (only if it's the start of a new line)
+                if (!closingTag && (result.length() == 0 || result.charAt(result.length() - 1) == '\n')) {
+                    result.append("    ".repeat(indentLevel)); // Add spaces for indentation
+                }
+                result.append(c); // Append the opening '<' character
+                continue;
+            } else if (c == '>') { // Check for the end of a tag
+                inTag = false; // We are now outside of a tag
+                result.append(c); // Append the closing '>' character
+
+                // Check if there is content immediately after the tag
+                if (i + 1 < input.length() && input.charAt(i + 1) != '<') {
+                    insideTagWithContent = true; // Set flag if there's content after the tag
+                } else {
+                    insideTagWithContent = false; // Reset flag if there's no content
+                }
+                // Increase indent level for the next line if it’s an opening tag
+                if (!closingTag && i > 0 && input.charAt(i - 1) != '/') {
+                    indentLevel++; // Increase indentation for child elements
+                }
+                // If it's a closing tag, reset closingTag flag
+                if (closingTag) {
+                    closingTag = false; // Reset flag for closing tag
+                    if(indentLevel>0)
+                        indentLevel--;
+                    if (!insideTagWithContent) {
+                        result.append("\n"); // Add newline if there's no content inside the tag
+                    }
+                }
+                continue; // Continue to the next character
+            }
+            // Append the character normally if it's not a tag delimiter
+            result.append(c); // Append characters that are part of text content
+        }
+
+        return result.toString().trim(); // Return the formatted XML, trimmed of leading/trailing whitespace
+    }
+
+
+    public static void main(String[] args) {
+        String input = "<root><child1><subchild>value with < and > inside</subchild></child1><child2>text</child2></root>";
+        System.out.println(formatXml(input));
+        System.out.println();
+        System.out.println();
+        String input2 = "<root><child1><subchild>value </subchild></child1><child2>text</child2><test/></root>";
+        System.out.println(formatXml(input2));
+        System.out.println();
+        System.out.println();
+        String input3 = "<root><empty /><selfClosing><child /></selfClosing></root>";
+        System.out.println(formatXml(input3));
+        System.out.println();
+        System.out.println();
+        String input4 = "<root><level1><level2><level3><level4>deep content</level4></level3></level2></level1></root>";
+        System.out.println(formatXml(input4));
+        System.out.println();
+        System.out.println();
+        String input5 = "<root><empty /><selfClosing><child /></selfClosing></root>";
+        System.out.println(formatXml(input5));
+        System.out.println();
+        System.out.println();
+        String input6 = "<root><child1><subchild>value with < and > inside</subchild></child1><child2>some <special> characters</child2></root>";
+        System.out.println(formatXml(input6));
+        System.out.println();
+        System.out.println();
+        String input7 = "<root><child1>co7ntent inside child1</child1><child2>content inside child2</child2></root>";
+        System.out.println(formatXml(input7));
+        System.out.println()
+        ;System.out.println();
+        String input8 = "<root>content inside</root>";
+        System.out.println(formatXml(input8));
+        System.out.println();
+        System.out.println();
+        String input9 = "<root></root>";
+        System.out.println(formatXml(input9));
+    }
+}

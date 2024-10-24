@@ -1,4 +1,7 @@
-ublic class XMLFormatter {
+<\/?([a-zA-Z0-9]+)(\s[^>]+)?\s*\/?>
+
+
+public class XMLFormatter {
 
     public static String prettifyXML(String unformattedXml) {
         // Normalize the input by removing extra whitespace between tags

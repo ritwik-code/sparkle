@@ -44,13 +44,16 @@ function App() {
         </div>
       <p className='text-center md:text-xl xl:text-2xl'>The card game that builds and deepens interpersonal relationships</p>
 
-      <div className='p-5 grid place-items-center'>
-        <ButtonGroup>
-          <Button color='inherit' onClick={openRules}>Rules</Button>
-          <Button color='inherit' onClick={openChooseCategories}>Choose Categories</Button>
-          <Button color='inherit' onClick={openAbout}>About</Button>
-        </ButtonGroup>
-      </div>
+      {/* Only show the menu buttons if not on the Welcome page */}
+      {window.location.pathname !== '/sparkle' && (
+        <div className='p-5 grid place-items-center'>
+          <ButtonGroup>
+            <Button color='inherit' onClick={openRules}>Rules</Button>
+            <Button color='inherit' onClick={openChooseCategories}>Choose Categories</Button>
+            <Button color='inherit' onClick={openAbout}>About</Button>
+          </ButtonGroup>
+        </div>
+      )}
       <Routes>
         <Route path="/sparkle" element={<Welcome />} />
         <Route path="/game" element={<GamePage />} />

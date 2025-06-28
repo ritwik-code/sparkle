@@ -52,7 +52,7 @@ function App() {
         </ButtonGroup>
       </div>
       <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route path="/sparkle" element={<Welcome />} />
         <Route path="/game" element={<GamePage />} />
       </Routes>
       {showAbout && <Modal handleClose={closeAbout} component={About()} />}

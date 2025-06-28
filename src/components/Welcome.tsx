@@ -1,10 +1,31 @@
-function Welcome() {
-  return (
+import React, { useState } from "react";
+import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
+import { categories } from "./Questions";
+import { useNavigate } from "react-router-dom";
 
+function Welcome() {
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [includeDeep, setIncludeDeep] = useState(true);
+  const navigate = useNavigate();
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategories((prev) =>
+      prev.includes(category)
+        ? prev.filter((c) => c !== category)
+        : [...prev, category]
+    );
+  };
+
+  const handleStartGame = () => {
+    if (selectedCategories.length > 0) {
+      navigate("/game", { state: { selectedCategories, includeDeep } });
+    } else {
+      alert("Please select at least one category to start the game.");
+    }
+  };
+
+  return (
     <>
-    {/* <div> //todo fix logo
-      <img style={{ marginRight: 'auto', marginLeft: 'auto' }} alt='logo' className="w-2/3 md:w-1/3 lg:1/4 xl:w-1/5 2xl:1/6" src={logo}></img>
-    </div> */}
       <div className='grid h-auto place-items-center'>
 
         <div className='w-3/4'>
@@ -16,6 +37,49 @@ function Welcome() {
             <div className="mt-5">
               <h2 className='text-center font-outline-05 font-semi-bold md:text-xl xl:text-2xl'>Each card contains a question or statement that encourages you to think about a specific topic and share
                 your thoughts and experiences on it. The questions are formulated in such a way that they help you get to know yourself better while also understanding your team members better.</h2>
+            </div>
+          </div>
+          <div>
+
+            <div className="text-center mb-2">
+                        <h2 className='text-center font-outline-05 font-semi-bold md:text-xl xl:text-2xl'>Choose the types of questions from the below categories that you would like to include in the game. You can select multiple categories.</h2>
+            </div>
+            <FormGroup row className="justify-center items-center mb-4">
+              {categories.map((category: string) => (
+                <FormControlLabel
+                  key={category}
+                  control={
+                    <Checkbox
+                      checked={selectedCategories.includes(category)}
+                      onChange={() => handleCategoryChange(category)}
+                    />
+                  }
+                  label={
+                    <span className='font-outline-05 font-semi-bold md:text-xl xl:text-2xl'>{category}</span>
+                  }
+                />
+              ))}
+            </FormGroup>
+                    <h2 className='text-center font-outline-05 font-semi-bold md:text-xl xl:text-2xl'>Please be mindful when including Deep questions. The Questions in this category tend to be more personal - Aiming to deepen relationships</h2>
+
+            <div className="flex justify-center mb-4">
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={includeDeep}
+                    onChange={() => setIncludeDeep((prev) => !prev)}
+                  />
+                }
+                label={<span className='font-outline-05 font-semi-bold md:text-xl xl:text-2xl'>Include Deep Questions</span>}
+              />
+            </div>
+            <div className="flex justify-center">
+              <button
+                className="mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xl font-bold"
+                onClick={handleStartGame}
+              >
+                Start Game
+              </button>
             </div>
           </div>
         </div>

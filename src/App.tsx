@@ -5,22 +5,38 @@ import logo from "./resources/logo.png";
 import Modal from './components/modal/modal';
 import About from './components/About';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { categories as allCategories } from './components/Questions';
 import { Button, ButtonGroup } from '@mui/material';
 import Rules from './components/Rules';
+import { Routes, Route } from 'react-router-dom';
+import ChooseCategories from './components/ChooseCategories';
+
 
 function App() {
-
   const [showAbout, toggleShowAbout] = useState(false);
-  const [showWelcome, toggleShowWelcome] = useState(true);
-
   const [showRules, toggleShowRules] = useState(false);
+  const [showChooseCategories, setShowChooseCategories] = useState(false);
 
+  // Persisted config state
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([...allCategories]);
+  const [includeDeep, setIncludeDeep] = useState(true);
+
+  const navigate = useNavigate();
 
   const openAbout = () => { toggleShowAbout(true) }
   const closeAbout = () => { toggleShowAbout(false) }
-  const closeWelcome = () => { toggleShowWelcome(false) }
   const openRules = () => { toggleShowRules(true) }
   const closeRules = () => { toggleShowRules(false) }
+  const openChooseCategories = () => { setShowChooseCategories(true) }
+  const closeChooseCategories = () => { setShowChooseCategories(false) }
+
+  // Handler for Save & Start Game in modal
+  const handleSaveAndStartGame = () => {
+    setShowChooseCategories(false);
+    navigate('/game', { state: { selectedCategories, includeDeep } });
+  };
+
   return (
     <div >
         <div className='w-10/12 mr-auto ml-auto'>
@@ -31,16 +47,30 @@ function App() {
       <div className='p-5 grid place-items-center'>
         <ButtonGroup>
           <Button color='inherit' onClick={openRules}>Rules</Button>
-          <p></p>
+          <Button color='inherit' onClick={openChooseCategories}>Choose Categories</Button>
           <Button color='inherit' onClick={openAbout}>About</Button>
         </ButtonGroup>
       </div>
-      <GamePage />
-      {showWelcome && <Modal handleClose={closeWelcome} component={Welcome()} />}
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/game" element={<GamePage />} />
+      </Routes>
       {showAbout && <Modal handleClose={closeAbout} component={About()} />}
       {showRules && <Modal handleClose={closeRules} component={Rules()} />}
-
-
+      {showChooseCategories && (
+        <Modal
+          handleClose={closeChooseCategories}
+          component={
+            <ChooseCategories
+              selectedCategories={selectedCategories}
+              includeDeep={includeDeep}
+              onChangeCategories={setSelectedCategories}
+              onChangeIncludeDeep={setIncludeDeep}
+              onSave={handleSaveAndStartGame}
+            />
+          }
+        />
+      )}
     </div >
   );
 }

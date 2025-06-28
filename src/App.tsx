@@ -19,6 +19,7 @@ function App() {
   const [showChooseCategories, setShowChooseCategories] = useState(false);
 
   // Persisted config state
+  // Default: all categories and deep questions enabled
   const [selectedCategories, setSelectedCategories] = useState<string[]>([...allCategories]);
   const [includeDeep, setIncludeDeep] = useState(true);
 
@@ -37,15 +38,37 @@ function App() {
     navigate('/game', { state: { selectedCategories, includeDeep } });
   };
 
+  // Modal state for Welcome and GamePage
+  const [showWelcome, setShowWelcome] = useState(true);
+  const [showGame, setShowGame] = useState(false);
+
+  // Start game from Welcome or ChooseCategories
+  const startGame = () => {
+    setShowWelcome(false);
+    setShowGame(true);
+  };
+
+  // Go back to Welcome (if needed)
+  const goToWelcome = () => {
+    setShowGame(false);
+    setShowWelcome(true);
+  };
+
+  // Handler for Save & Start Game in modal
+  const handleSaveAndStartGameModal = () => {
+    setShowChooseCategories(false);
+    startGame();
+  };
+
   return (
-    <div >
-        <div className='w-10/12 mr-auto ml-auto'>
-          <img  alt='logo' className="mr-auto ml-auto w-2/3 md:w-1/3 lg:1/4 xl:w-1/5 2xl:1/6" src={logo}></img>
-        </div>
+    <div>
+      <div className='w-10/12 mr-auto ml-auto'>
+        <img alt='logo' className="mr-auto ml-auto w-2/3 md:w-1/3 lg:1/4 xl:w-1/5 2xl:1/6" src={logo}></img>
+      </div>
       <p className='text-center md:text-xl xl:text-2xl'>The card game that builds and deepens interpersonal relationships</p>
 
-      {/* Only show the menu buttons if not on the Welcome page */}
-      {window.location.pathname !== '/sparkle' && (
+      {/* Only show menu buttons if not on Welcome modal */}
+      {!showWelcome && (
         <div className='p-5 grid place-items-center'>
           <ButtonGroup>
             <Button color='inherit' onClick={openRules}>Rules</Button>
@@ -54,10 +77,33 @@ function App() {
           </ButtonGroup>
         </div>
       )}
-      <Routes>
-        <Route path="/sparkle" element={<Welcome />} />
-        <Route path="/game" element={<GamePage />} />
-      </Routes>
+
+
+      {/* Welcome Modal */}
+      {showWelcome && (
+        <Modal
+          handleClose={() => setShowWelcome(false)}
+          component={
+            <Welcome
+              selectedCategories={selectedCategories}
+              includeDeep={includeDeep}
+              onChangeCategories={setSelectedCategories}
+              onChangeIncludeDeep={setIncludeDeep}
+              onStartGame={startGame}
+            />
+          }
+        />
+      )}
+
+      {/* Game Page (not modal) */}
+      {!showWelcome && showGame && (
+        <GamePage
+          selectedCategories={selectedCategories}
+          includeDeep={includeDeep}
+          onBack={goToWelcome}
+        />
+      )}
+
       {showAbout && <Modal handleClose={closeAbout} component={About()} />}
       {showRules && <Modal handleClose={closeRules} component={Rules()} />}
       {showChooseCategories && (
@@ -69,12 +115,12 @@ function App() {
               includeDeep={includeDeep}
               onChangeCategories={setSelectedCategories}
               onChangeIncludeDeep={setIncludeDeep}
-              onSave={handleSaveAndStartGame}
+              onSave={handleSaveAndStartGameModal}
             />
           }
         />
       )}
-    </div >
+    </div>
   );
 }
 export default App;

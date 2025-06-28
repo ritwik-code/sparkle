@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 import questionsData from './Questions';
 import ReactCardFlip from 'react-card-flip';
 import CardBack from '../resources/card.png';
@@ -21,18 +20,25 @@ const shuffleArray = (array: any[]) => {
     return shuffledArray;
 };
 
-const GamePage: React.FC = () => {
-    const location = useLocation();
-    const navigate = useNavigate();
-    const selectedCategories: string[] = React.useMemo(() => location.state?.selectedCategories || [], [location.state]);
-    // Get includeDeep from navigation state, default to true if undefined
-    const includeDeep: boolean = location.state && typeof location.state.includeDeep === 'boolean' ? location.state.includeDeep : true;
+interface GamePageProps {
+  selectedCategories: string[];
+  includeDeep: boolean;
+  onBack?: () => void;
+}
+
+const GamePage: React.FC<GamePageProps> = ({ selectedCategories, includeDeep, onBack }) => {
+    // Removed useLocation and useNavigate imports/usages
+    // const location = useLocation();
+    // const navigate = useNavigate();
+    // const selectedCategories: string[] = React.useMemo(() => location.state?.selectedCategories || [], [location.state]);
+    // // Get includeDeep from navigation state, default to true if undefined
+    // const includeDeep: boolean = location.state && typeof location.state.includeDeep === 'boolean' ? location.state.includeDeep : true;
 
     React.useEffect(() => {
         if (!selectedCategories.length) {
-            navigate('/', { replace: true });
+            onBack?.();
         }
-    }, [selectedCategories, navigate]);
+    }, [selectedCategories, onBack]);
 
 console.log("Selected Categories:", selectedCategories);
 console.log("include deep:", includeDeep);
@@ -160,6 +166,17 @@ console.log("include deep:", includeDeep);
             </div>
         </div>
     );
+};
+
+// Default props for initial app load
+GamePage.defaultProps = {
+  selectedCategories: [
+    'Life Experiences',
+    'Self-Reflection',
+    'Professional Growth',
+    'Miscellaneous',
+  ],
+  includeDeep: true,
 };
 
 export default GamePage;

@@ -1,31 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import { categories } from "./Questions";
-import { useNavigate } from "react-router-dom";
 
-function Welcome() {
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [includeDeep, setIncludeDeep] = useState(true);
-  const navigate = useNavigate();
+interface WelcomeProps {
+  selectedCategories: string[];
+  includeDeep: boolean;
+  onChangeCategories: (categories: string[]) => void;
+  onChangeIncludeDeep: (include: boolean) => void;
+  onStartGame: () => void;
+}
 
+function Welcome({
+  selectedCategories,
+  includeDeep,
+  onChangeCategories,
+  onChangeIncludeDeep,
+  onStartGame,
+}: WelcomeProps) {
   const handleCategoryChange = (category: string) => {
-    setSelectedCategories((prev) =>
-      prev.includes(category)
-        ? prev.filter((c) => c !== category)
-        : [...prev, category]
+    onChangeCategories(
+      selectedCategories.includes(category)
+        ? selectedCategories.filter((c) => c !== category)
+        : [...selectedCategories, category]
     );
   };
 
-  const handleStartGame = () => {
-    if (selectedCategories.length > 0) {
-      navigate("/game", { state: { selectedCategories, includeDeep } });
-    } else {
-      alert("Please select at least one category to start the game.");
-    }
-  };
-
   return (
-    <>
+    <div className='mt-5 pb-16'>
       <div className='grid h-auto place-items-center'>
 
         <div className='w-3/4'>
@@ -67,7 +68,7 @@ function Welcome() {
                 control={
                   <Checkbox
                     checked={includeDeep}
-                    onChange={() => setIncludeDeep((prev) => !prev)}
+                    onChange={() => onChangeIncludeDeep(!includeDeep)}
                   />
                 }
                 label={<span className='font-outline-05 font-semi-bold md:text-xl xl:text-2xl'>Include Deep Questions</span>}
@@ -76,7 +77,7 @@ function Welcome() {
             <div className="flex justify-center">
               <button
                 className="mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xl font-bold"
-                onClick={handleStartGame}
+                onClick={onStartGame}
               >
                 Start Game
               </button>
@@ -84,7 +85,7 @@ function Welcome() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

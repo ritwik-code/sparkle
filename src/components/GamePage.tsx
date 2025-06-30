@@ -44,7 +44,6 @@ const GamePage: React.FC<GamePageProps> = ({ selectedCategories, includeDeep, on
             let remainder = numCards % numCategories;
             selectedCategories.forEach((cat) => {
                 let catQuestions = shuffleArray(questionsData[cat as CategoryKey] || []);
-                console.log(`Category: ${cat}, Questions: ${catQuestions.length}`);
                 if (!includeDeep) {
                     console.log("Excluding deep questions");
                     catQuestions = catQuestions.filter(q => !q.deep);
@@ -58,7 +57,7 @@ const GamePage: React.FC<GamePageProps> = ({ selectedCategories, includeDeep, on
             result = shuffleArray(result).slice(0, numCards);
         }
         return result;
-    }, [selectedCategories, includeDeep]);
+    }, [numCategories, selectedCategories, includeDeep]);
     const rows = [questionsToShow.slice(0, 3), questionsToShow.slice(3, 6)];
 
     // State for flip and question index for each card

@@ -39,7 +39,7 @@ function App() {
 
   // Modal state for Welcome and GamePage
   const [showWelcome, setShowWelcome] = useState(true);
-  const [showGame, setShowGame] = useState(false);
+  const [showGame, setShowGame] = useState(true);
 
   // Start game from Welcome or ChooseCategories
   const startGame = () => {

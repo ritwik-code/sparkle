@@ -27,21 +27,11 @@ interface GamePageProps {
 }
 
 const GamePage: React.FC<GamePageProps> = ({ selectedCategories, includeDeep, onBack }) => {
-    // Removed useLocation and useNavigate imports/usages
-    // const location = useLocation();
-    // const navigate = useNavigate();
-    // const selectedCategories: string[] = React.useMemo(() => location.state?.selectedCategories || [], [location.state]);
-    // // Get includeDeep from navigation state, default to true if undefined
-    // const includeDeep: boolean = location.state && typeof location.state.includeDeep === 'boolean' ? location.state.includeDeep : true;
-
     React.useEffect(() => {
         if (!selectedCategories.length) {
             onBack?.();
         }
     }, [selectedCategories, onBack]);
-
-console.log("Selected Categories:", selectedCategories);
-console.log("include deep:", includeDeep);
 
     // Evenly distribute questions from selected categories
     const numCards = 6;

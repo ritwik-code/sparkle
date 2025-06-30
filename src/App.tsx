@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 import { categories as allCategories } from './components/Questions';
 import { Button, ButtonGroup } from '@mui/material';
 import Rules from './components/Rules';
-import { Routes, Route } from 'react-router-dom';
 import ChooseCategories from './components/ChooseCategories';
 
 
@@ -71,7 +70,7 @@ function App() {
       {!showWelcome && (
         <div className='p-5 grid place-items-center'>
           <ButtonGroup>
-            <Button color='inherit' onClick={openRules}>Rules</Button>
+            <Button color='inherit' onClick={openRules}>Guidelines</Button>
             <Button color='inherit' onClick={openChooseCategories}>Choose Categories</Button>
             <Button color='inherit' onClick={openAbout}>About</Button>
           </ButtonGroup>
@@ -120,6 +119,13 @@ function App() {
           }
         />
       )}
+      {/* Disclaimer at the bottom */}
+      <div className="w-full flex justify-center mt-8 px-4 md:px-16 xl:px-48">
+        <div className="text-center font-outline-05 font-semi-bold md:text-xl xl:text-2xl">
+          <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Disclaimer:</span><br />
+          This activity is intended for team-building purposes only. It is not a diagnostic or therapeutic tool. Some questions may touch on personal or emotional topics. If at any point you feel uncomfortable, you are encouraged to pass or take a break.
+        </div>
+      </div>
     </div>
   );
 }

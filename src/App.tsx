@@ -121,7 +121,7 @@ function App() {
       )}
       {/* Disclaimer at the bottom */}
       <div className="w-full flex justify-center mt-8 px-4 md:px-16 xl:px-48">
-        <div className="text-center font-outline-05 font-semi-bold md:text-sm xl:text-lg">
+        <div className="text-center font-outline-05 font-semi-bold md:text-xs xl:text-sm">
           <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Disclaimer:</span><br />
           This activity is intended for team-building purposes only. It is not a diagnostic or therapeutic tool. Some questions may touch on personal or 
           emotional topics. If at any point you feel uncomfortable, you are encouraged to pass or take a break.

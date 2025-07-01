@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/sparkle/static/css/main.72f77872.css",
-    "main.js": "/sparkle/static/js/main.50b8ba8b.js",
+    "main.css": "/sparkle/static/css/main.f8a6dcc4.css",
+    "main.js": "/sparkle/static/js/main.8f2d904b.js",
     "static/js/787.309bb2ca.chunk.js": "/sparkle/static/js/787.309bb2ca.chunk.js",
     "static/media/logo.png": "/sparkle/static/media/logo.2e5d1e8c5410c5658bf3.png",
     "static/media/card.png": "/sparkle/static/media/card.1bdcf92ca60ad13a901b.png",
     "static/media/Inkfree.ttf": "/sparkle/static/media/Inkfree.0f15d867500d20e1f9d3.ttf",
     "index.html": "/sparkle/index.html",
-    "main.72f77872.css.map": "/sparkle/static/css/main.72f77872.css.map",
-    "main.50b8ba8b.js.map": "/sparkle/static/js/main.50b8ba8b.js.map",
+    "main.f8a6dcc4.css.map": "/sparkle/static/css/main.f8a6dcc4.css.map",
+    "main.8f2d904b.js.map": "/sparkle/static/js/main.8f2d904b.js.map",
     "787.309bb2ca.chunk.js.map": "/sparkle/static/js/787.309bb2ca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72f77872.css",
-    "static/js/main.50b8ba8b.js"
+    "static/css/main.f8a6dcc4.css",
+    "static/js/main.8f2d904b.js"
   ]
 }

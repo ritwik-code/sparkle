@@ -9,6 +9,7 @@ import { categories as allCategories } from './components/Questions';
 import { Button, ButtonGroup } from '@mui/material';
 import Rules from './components/Rules';
 import ChooseCategories from './components/ChooseCategories';
+import Survey from './components/Survey';
 
 
 function App() {
@@ -88,11 +89,13 @@ function App() {
 
       {/* Game Page (not modal) */}
       {!showWelcome && showGame && (
+        <>
         <GamePage
           selectedCategories={selectedCategories}
           includeDeep={includeDeep}
           onBack={goToWelcome}
         />
+        <Survey></Survey></>
       )}
 
       {showAbout && <Modal handleClose={closeAbout} component={About()} />}

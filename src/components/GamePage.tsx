@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import questionsData from './Questions';
 import ReactCardFlip from 'react-card-flip';
-import CardBack from '../resources/card.png';
+import CardBack1 from '../resources/card1.png';
+import CardBack2 from '../resources/card2.png';
+import CardBack3 from '../resources/card3.png';
+import CardBack4 from '../resources/card4.png';
+import CardBack5 from '../resources/card5.png';
+import CardBack6 from '../resources/card6.png';
 
 const categoryKeys = [
   'Life Experiences',
@@ -59,6 +64,8 @@ const GamePage: React.FC<GamePageProps> = ({ selectedCategories, includeDeep, on
         return result;
     }, [numCategories, selectedCategories, includeDeep]);
     const rows = [questionsToShow.slice(0, 3), questionsToShow.slice(3, 6)];
+    // Array of card back images
+    const cardBackImages = [CardBack1, CardBack2, CardBack3, CardBack4, CardBack5, CardBack6];
 
     // State for flip and question index for each card
     const [flipped, setFlipped] = useState(Array(numCards).fill(true));
@@ -138,7 +145,7 @@ const GamePage: React.FC<GamePageProps> = ({ selectedCategories, includeDeep, on
                                                     onClick={() => handleFlip(cardIdx)}
                                                     style={{ background: 'none', minWidth: '11rem', minHeight: '10rem' }}
                                                 >
-                                                    <img className="w-44 h-36 sm:w-56 sm:h-40 md:w-64 md:h-48 lg:w-72 lg:h-56 object-contain mx-auto bg-black" alt="sparkler" src={CardBack} />
+                                                    <img className="w-44 h-36 sm:w-56 sm:h-40 md:w-64 md:h-48 lg:w-72 lg:h-56 object-contain mx-auto bg-black" alt={`card-back-${cardIdx+1}`} src={cardBackImages[cardIdx]} />
                                                 </div>
                                                 {/* Card Front */}
                                                 <div

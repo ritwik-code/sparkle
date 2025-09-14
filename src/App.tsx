@@ -5,7 +5,6 @@ import logo from "./resources/logo.png";
 import Modal from './components/modal/modal';
 import About from './components/About';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { categories as allCategories } from './components/Questions';
 import { Button, ButtonGroup } from '@mui/material';
 import Rules from './components/Rules';
@@ -22,7 +21,6 @@ function App() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([...allCategories]);
   const [includeDeep, setIncludeDeep] = useState(true);
 
-  const navigate = useNavigate();
 
   const openAbout = () => { toggleShowAbout(true) }
   const closeAbout = () => { toggleShowAbout(false) }
@@ -30,12 +28,6 @@ function App() {
   const closeRules = () => { toggleShowRules(false) }
   const openChooseCategories = () => { setShowChooseCategories(true) }
   const closeChooseCategories = () => { setShowChooseCategories(false) }
-
-  // Handler for Save & Start Game in modal
-  const handleSaveAndStartGame = () => {
-    setShowChooseCategories(false);
-    navigate('/game', { state: { selectedCategories, includeDeep } });
-  };
 
   // Modal state for Welcome and GamePage
   const [showWelcome, setShowWelcome] = useState(true);

@@ -64,23 +64,33 @@ const GamePage: React.FC<GamePageProps> = ({ selectedCategories, includeDeep, on
     const [flipped, setFlipped] = useState(Array(numCards).fill(true));
     const [cardQuestions, setCardQuestions] = useState(questionsToShow);
 
+    // Track shown questions to avoid repeats
+    const [shownQuestions, setShownQuestions] = useState<Set<string>>(new Set());
+
     // Sync cardQuestions and flipped state when questionsToShow changes
     React.useEffect(() => {
         setCardQuestions(questionsToShow);
         setFlipped(Array(numCards).fill(true));
     }, [questionsToShow, numCards]);
 
-    // Helper to get a new random question from the same category (not repeating current)
+    // Helper to get a new random question from the same category (not repeating any shown)
     function getNewQuestion(category: string, currentQ: any) {
         let catQuestions = questionsData[category as CategoryKey] || [];
         if (!includeDeep) {
             catQuestions = catQuestions.filter(q => !q.deep);
         }
-        const filtered = catQuestions.filter(q => q.question !== currentQ.question);
-
+        // Filter out all questions that have already been shown
+        const filtered = catQuestions.filter(q => !shownQuestions.has(q.question));
         if (filtered.length === 0) return currentQ;
-        return filtered[Math.floor(Math.random() * filtered.length)];
+        const newQ = filtered[Math.floor(Math.random() * filtered.length)];
+        setShownQuestions(prev => new Set(prev).add(newQ.question));
+        return newQ;
     }
+
+    // When initializing, mark initial questions as shown
+    React.useEffect(() => {
+        setShownQuestions(new Set(questionsToShow.map(q => q.question.question)));
+    }, [questionsToShow]);
 
     const handleFlip = (cardIdx: number) => {
         setFlipped((prev) => {

@@ -340,7 +340,7 @@ const QuestionsData =
         "deep":false
     },
     {
-        "question":"Are you able to be your authentic self at work? Explain why \/ why not?",
+        "question":"Are you able to be your authentic self at work? Explain why / why not?",
         "deep":false
     },
     {
@@ -584,7 +584,7 @@ const QuestionsData =
         "deep":false
     },
     {
-        "question":"What would you wish for your children to know (if you had\/have children)?",
+        "question":"What would you wish for your children to know (if you had/have children)?",
         "deep":false
     },
     {
@@ -716,7 +716,7 @@ const QuestionsData =
         "deep":false
     },
     {
-        "question":"Are you truly satisfied in your job \/ role? Please explain.",
+        "question":"Are you truly satisfied in your job / role? Please explain.",
         "deep":false
     },
     {
@@ -1206,7 +1206,7 @@ const QuestionsData =
         "deep":false
     },
     {
-        "question":"Are you able to be your authentic self at work? Explain why \/ why not?",
+        "question":"Are you able to be your authentic self at work? Explain why / why not?",
         "deep":false
     },
     {
@@ -1450,7 +1450,7 @@ const QuestionsData =
         "deep":false
     },
     {
-        "question":"What would you wish for your children to know (if you had\/have children)?",
+        "question":"What would you wish for your children to know (if you had/have children)?",
         "deep":false
     },
     {
@@ -1582,7 +1582,7 @@ const QuestionsData =
         "deep":false
     },
     {
-        "question":"Are you truly satisfied in your job \/ role? Please explain.",
+        "question":"Are you truly satisfied in your job / role? Please explain.",
         "deep":false
     },
     {
@@ -2072,7 +2072,7 @@ const QuestionsData =
         "deep":false
     },
     {
-        "question":"Are you able to be your authentic self at work? Explain why \/ why not?",
+        "question":"Are you able to be your authentic self at work? Explain why / why not?",
         "deep":false
     },
     {
@@ -2316,7 +2316,7 @@ const QuestionsData =
         "deep":false
     },
     {
-        "question":"What would you wish for your children to know (if you had\/have children)?",
+        "question":"What would you wish for your children to know (if you had/have children)?",
         "deep":false
     },
     {
@@ -2448,7 +2448,7 @@ const QuestionsData =
         "deep":false
     },
     {
-        "question":"Are you truly satisfied in your job \/ role? Please explain.",
+        "question":"Are you truly satisfied in your job / role? Please explain.",
         "deep":false
     },
     {
@@ -2939,7 +2939,7 @@ const QuestionsData =
         "deep":false
     },
     {
-        "question":"Are you able to be your authentic self at work? Explain why \/ why not?",
+        "question":"Are you able to be your authentic self at work? Explain why / why not?",
         "deep":false
     },
     {
@@ -3183,7 +3183,7 @@ const QuestionsData =
         "deep":false
     },
     {
-        "question":"What would you wish for your children to know (if you had\/have children)?",
+        "question":"What would you wish for your children to know (if you had/have children)?",
         "deep":false
     },
     {
@@ -3315,7 +3315,7 @@ const QuestionsData =
         "deep":false
     },
     {
-        "question":"Are you truly satisfied in your job \/ role? Please explain.",
+        "question":"Are you truly satisfied in your job / role? Please explain.",
         "deep":false
     },
     {

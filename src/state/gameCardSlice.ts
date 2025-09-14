@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import QuestionsData from "../components/Questions";
 
 class GameCard {
     question1: number;

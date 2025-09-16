@@ -10,6 +10,7 @@ import { Button, ButtonGroup } from '@mui/material';
 import Rules from './components/Rules';
 import ChooseCategories from './components/ChooseCategories';
 import Survey from './components/Survey';
+import CardImage from './resources/card1.png';
 
 
 function App() {
@@ -89,13 +90,33 @@ function App() {
 
       {/* Game Page (not modal) */}
       {!showWelcome && showGame && (
-        <>
-        <GamePage
+         <div className="w-full flex flex-col justify-center px-4 md:px-16 xl:px-48 mb-2">
+          <GamePage
           selectedCategories={selectedCategories}
           includeDeep={includeDeep}
           onBack={goToWelcome}
-        />
-        <Survey></Survey></>
+          />
+          <div style={{ textAlign: 'center', fontSize: '1rem', maxWidth: '800px', margin: '0 auto', fontFamily: 'inherit', marginBottom: '0.5rem' }}>
+            <span style={{ fontWeight: 'bold' }}>Disclaimer</span><br />
+            This activity is intended for team-building purposes only. It is not a diagnostic or therapeutic tool. Some questions may touch on personal or 
+            emotional topics. If at any point you feel uncomfortable, you are encouraged to pass or take a break.
+            </div>
+            {/* <Survey></Survey> */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', textAlign: 'center' }}>
+              <h2 style={{ marginBottom: '1rem', fontWeight: 'bold', fontSize: '1rem' }}>Feedback Survey</h2>
+              <img src={CardImage} alt="Card" style={{ width: '180px', height: 'auto', marginBottom: '1.5rem' }} />
+              <div style={{ marginBottom: '1rem', fontSize: '1.1rem' }}>
+                or go to <a href="https://www.menti.com" target="_blank" rel="noopener noreferrer" 
+                style={{ color: '#2563eb', textDecoration: 'underline' }}>www.menti.com</a> and enter the code 
+                <span style={{ fontWeight: 'bold', letterSpacing: '2px' }}>xxxx xxxx</span>
+
+              </div>
+              <p style={{ maxWidth: '400px', fontSize: '1rem' }}>
+                We'd love to hear your thoughts and impressions to help us make the game even better.
+              </p>
+            </div>
+            </div>
+
       )}
 
       {showAbout && <Modal handleClose={closeAbout} component={About()} />}
@@ -115,13 +136,7 @@ function App() {
         />
       )}
       {/* Disclaimer at the bottom */}
-      <div className="w-full flex justify-center mt-8 px-4 md:px-16 xl:px-48">
-        <div className="text-center font-outline-05 font-semi-bold md:text-xs xl:text-sm">
-          <span>Disclaimer:</span><br />
-          This activity is intended for team-building purposes only. It is not a diagnostic or therapeutic tool. Some questions may touch on personal or 
-          emotional topics. If at any point you feel uncomfortable, you are encouraged to pass or take a break.
-        </div>
-      </div>
+
     </div>
   );
 }

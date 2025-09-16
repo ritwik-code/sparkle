@@ -128,7 +128,7 @@ const GamePage: React.FC<GamePageProps> = ({ selectedCategories, includeDeep, on
                     <div className='buildRelationships mx-1'>
                         <div className='cards'>
                             {rows.map((row, rowIdx) => (
-                                <div key={rowIdx} className="flex flex-wrap justify-center mb-8 gap-6">
+                                <div key={rowIdx} className="flex flex-wrap justify-center mb-8 gap-0">
                                     {row.map((qObj, idx) => {
                                         const cardIdx = rowIdx * 3 + idx;
                                         const q = cardQuestions[cardIdx]?.question || qObj.question;
